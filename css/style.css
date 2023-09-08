@@ -97,6 +97,7 @@ header {
 }
 
 .hero-text button {
+    font-weight: 400;
     margin-top: 1em;
     color: #a29bbd;
     background-color: white;
@@ -128,7 +129,7 @@ header {
     header {
         background: #674bb1 url(../images/bg-desktop.svg) no-repeat center center/ cover;
         height: 100%;
-        padding: 3em 5em;
+        padding: 3em 3em;
     }
 
     .logo {
@@ -170,6 +171,25 @@ header {
         font-size: 1em;
         text-align: unset;
         max-inline-size: 49ch;
+    }
+
+    .hero-text button {
+        font-size: 1em;
+        font-weight: 400;
+        margin-top: 1em;
+        color: #a29bbd;
+        background-color: white;
+        border-radius: 50px;
+        border-style: none;
+        padding: 1em 4em;
+        -webkit-box-shadow: 0px 14px 35px -13px rgba(0,0,0,1);
+        -moz-box-shadow: 0px 14px 35px -13px rgba(0,0,0,1);
+        box-shadow: 0px 14px 35px -13px rgba(0,0,0,1);
+    }
+
+    .hero-text button:hover {
+        color: white;
+        background-color: #e980e7;
     }
     
     .social {
