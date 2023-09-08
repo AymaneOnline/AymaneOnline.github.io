@@ -71,12 +71,12 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 .hero-text h1 {
     font-size: 1.4rem;
     color: white;
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     line-height: 1.5;
     margin-top: 2em;
@@ -89,7 +89,6 @@ header {
 .hero-text p {
     font-size: 1em;
     color: rgba(255, 255, 255, 0.83);
-    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     max-inline-size: 33ch;
     line-height: 1.3;
