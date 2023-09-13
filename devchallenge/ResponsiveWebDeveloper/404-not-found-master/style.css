@@ -97,6 +97,60 @@ footer {
 }
 
 @media only screen and (min-width: 576px) {
+
+    main {
+        margin: 40px 77px;
+        flex-direction: row;
+    }
+
+    .main-img {
+        margin-right: 40px;
+    }
+
+    .badnews-h {
+        min-inline-size: 10ch;
+        max-inline-size: 15ch;
+        font-size: 26px;
+        line-height: 40px;
+    }
+
+    .badnews-p {
+        min-inline-size: 25ch;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .header {
+        margin: 40px 77px;
+    }
+
+    main {
+        margin: 40px 77px;
+        flex-direction: row;
+    }
+
+    .main-img {
+        width: 400px;
+        height: auto;
+        margin-right: 60px;
+    }
+
+    .badnews-h {
+        min-inline-size: 10ch;
+        max-inline-size: 15ch;
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .badnews-p {
+        max-inline-size: 25ch;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
     .header {
         margin: 40px 77px;
     }
