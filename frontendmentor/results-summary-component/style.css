@@ -188,7 +188,7 @@
 
     .result {
         border-radius: 2em;
-        width: 300px;
+        width: 400px;
     }
 
     .result-comment-p {
@@ -196,6 +196,6 @@
     }
 
     .summary {
-        width: 300px;
+        width: 400px;
     }
 }
