@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: unset;
+    background-color: #FAFAF9; 
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    margin-top: 164px;
+    width: 368px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Sora', sans-serif;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 20px 20px 20px -35px black;
+}
+
+.card-content {
+    margin: 16px;
+}
+
+img {
+    max-inline-size: 100%;
+    block-size: auto;
+    width: 336px;
+    align-self: center;
+    padding-bottom: 16px;
+}
+
+.card-tag {
+    width: fit-content;
+    font-weight: 700;
+    font-size: 10px;
+    padding: 6px 16px;
+    color: #883AE1;
+    background-color: #E6D6FC;
+    border-radius: 16px
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    color: #20293A;
+}
+
+.card-text {
+    font-weight: 400;
+    font-size: 14px;
+    color: #6C727F;
+    margin-bottom: 4px;
+}
+
+.card-rule {
+    height: 1px;
+    background-color: #E6D6FC;
+    border: none;
+}
+
+.card-author {
+    font-weight: 400;
+    font-size: 12px;
+    margin: 20px 0px 20px 16px;
+    color: #6C727F;
+}
