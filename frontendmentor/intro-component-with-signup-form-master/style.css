@@ -156,3 +156,38 @@ form span {
 .field-group.error input {
     border: 2px solid hsl(0, 100%, 74%);
 }
+
+
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+
+    body {
+        background-image: url(images/bg-intro-desktop.png);
+        overflow: auto;
+    }
+
+    .container {
+        height: 100svh;
+        flex-direction: row;
+    }
+
+    .left-col {
+        margin-top: unset;
+        max-width: 550px;
+        text-align: start;
+        align-self: center;
+    }
+
+    .left-col h1 {
+        max-inline-size: 16ch;
+    }
+
+    .left-col p {
+        max-inline-size: 49ch;
+    }
+
+    .right-col {
+        max-width: 500px;
+        margin-top: unset;
+        margin-bottom: unset;
+    }
+}
