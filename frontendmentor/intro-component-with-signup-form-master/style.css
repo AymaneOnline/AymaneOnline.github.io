@@ -80,12 +80,16 @@ label {
     display: none;
 }
 
+.field-group:first-child {
+    margin-top: 20px;
+}
+
 input {
     width: 100%;
     padding: 20px;
     border: 1px solid hsl(246, 25%, 77%);
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 input::placeholder {
@@ -131,22 +135,23 @@ form span {
 /* Error styling */
 
 .error-text {
-    display: none;
+    opacity: 0;
     color: hsl(0, 100%, 74%);
     font-weight: 600;
     font-style: italic;
     text-align: end;
-    margin-top: 5px;
+    position: relative;
+    right: -0px;
 }
 
 .error-icon {
     display: none;
     position: absolute;
-    transform: translate(-45px, 37px);
+    transform: translate(-40px, 22px);
 }
 
 .field-group.error .error-text {
-    display: block;
+    opacity: 1;
 }
 
 .field-group.error .error-icon {
