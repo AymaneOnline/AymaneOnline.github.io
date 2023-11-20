@@ -13,21 +13,11 @@ html {
 body {
     height: 100vh;
     background-color: hsl(185, 75%, 39%);
+    background-image: url(images/bg-pattern-top.svg), url(images/bg-pattern-bottom.svg);
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+    background-position: -150px 0%, 150px 100%;
     overflow: hidden;
-}
-
-#bg-top {
-    position: absolute;
-    width: 100%;
-    top: -100px;
-    left: -150px;
-}
-
-#bg-bottom {
-    position: absolute;
-    width: 100%;
-    bottom: -150px;
-    right: -150px;
 }
 
 main {
@@ -111,15 +101,10 @@ main {
 }
 
 @media only screen and (min-width: 768px) {
-    #bg-top {
-        width: unset;
-        top: -500px;
-        left: -300px;
+
+    body {
+        background-size: 50%, 50%;
+        background-position: -5% -300px, 105% 350px;
     }
 
-    #bg-bottom {
-        width: unset;
-        bottom: -500px;
-        right: -300px;
-    }
 }
