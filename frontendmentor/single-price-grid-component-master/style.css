@@ -10,7 +10,7 @@
 /* Using Mobile First */
 
 body {
-    height: 100svh;
+    min-height: 100svh;
     background-color: hsl(204, 43%, 93%);
     margin: 50px 24px;
     display: flex;
