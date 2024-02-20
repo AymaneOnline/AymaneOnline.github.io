@@ -146,6 +146,10 @@ footer {
         grid-template-columns: 1fr 1fr;
     }
 
+    .grid-container > div {
+        padding: 30px;
+    }
+
     /* Join our community Section */
 
     .grid-item1 {
