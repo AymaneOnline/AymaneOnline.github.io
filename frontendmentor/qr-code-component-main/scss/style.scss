@@ -32,11 +32,16 @@ img {
 }
 
 .qr-code-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
     background-color: white;
     width: 320px;
     height: 497px;
     padding: 16px;
     border-radius: 20px;
+    box-shadow: 0px 2px 6px 0px rgba(89, 97, 104, 0.1);
 
     #qr-code {
         margin-bottom: 24px;
@@ -52,12 +57,14 @@ img {
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 16px;
+            line-height: 1.26;
         }
 
         p {
             color: $grayish-blue;
             font-size: 15px;
             font-weight: 400;
+            line-height: 1.26;
         }
     }
 }
