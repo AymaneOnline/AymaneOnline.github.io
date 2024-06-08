@@ -1,0 +1,66 @@
+// Import font from Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+// Colors
+$light-grey: hsl(212, 45%, 89%);
+$grayish-blue: hsl(220, 15%, 55%);
+$dark-blue: hsl(218, 44%, 22%);
+
+// Font
+$font-primary: "Outfit", sans-serif;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $light-grey;
+    font-family: $font-primary;
+    display: flex;
+    min-height: 100svh;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-code-card {
+    background-color: white;
+    width: 320px;
+    height: 497px;
+    padding: 16px;
+    border-radius: 20px;
+
+    #qr-code {
+        margin-bottom: 24px;
+        border-radius: 10px;
+    }
+
+    .text-item {
+        text-align: center;
+        padding: 0 16px;
+
+        h2 {
+            color: $dark-blue;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        p {
+            color: $grayish-blue;
+            font-size: 15px;
+            font-weight: 400;
+        }
+    }
+}
