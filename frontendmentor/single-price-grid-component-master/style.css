@@ -10,6 +10,7 @@
 /* Using Mobile First */
 
 body {
+    /* not using height: 100svh so that the content could be seen if the viewport is smaller than the card. */
     min-height: 100svh;
     background-color: hsl(204, 43%, 93%);
     margin: 50px 24px;
