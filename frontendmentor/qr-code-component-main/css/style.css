@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -46,7 +45,7 @@ img {
   margin-bottom: 16px;
 }
 .qr-code-card .text-item p {
-  color: hsl(220, 15%, 55%);
+  color: #4E586A;
   font-size: 15px;
   font-weight: 400;
 }
