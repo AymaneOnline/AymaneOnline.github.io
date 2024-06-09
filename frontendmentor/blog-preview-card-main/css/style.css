@@ -87,7 +87,7 @@ body .container {
 }
 .blog-card .blog-text .description {
   font-size: 1em;
-  color: grey;
+  color: #595959;
 }
 .blog-card .author {
   display: flex;
