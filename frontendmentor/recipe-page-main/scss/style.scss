@@ -11,8 +11,9 @@
 
 body {
     background-color: $eggshell;
-    padding: 48px 24px;
+    padding: 110px 24px;
     font-family: "Outfit";
+    min-height: 100svh;
 
     @media (max-width: 576px) {
         border-radius: 0;
