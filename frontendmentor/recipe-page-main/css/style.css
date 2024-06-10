@@ -46,12 +46,30 @@ body {
   padding: 48px 24px;
   font-family: "Outfit";
 }
+@media (max-width: 576px) {
+  body {
+    border-radius: 0;
+    padding: 0;
+  }
+}
 
 .recipe {
   background-color: hsl(0, 0%, 100%);
   width: 720px;
-  padding: 40px 40px 24px 40px;
   border-radius: 20px;
+}
+@media (max-width: 576px) {
+  .recipe {
+    border-radius: 0;
+  }
+}
+@media (min-width: 576px) {
+  .recipe .image {
+    padding: 40px 40px 0 40px;
+  }
+}
+.recipe .text {
+  padding: 0px 40px 24px 40px;
 }
 .recipe section {
   margin: 30px 0px;
@@ -65,6 +83,11 @@ body {
 .recipe img {
   width: 100%;
   border-radius: 10px;
+}
+@media (max-width: 576px) {
+  .recipe img {
+    border-radius: 0px;
+  }
 }
 .recipe p {
   color: hsl(332, 51%, 32%);
