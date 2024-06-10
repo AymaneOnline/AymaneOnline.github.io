@@ -30,9 +30,10 @@ h2 {
   color: hsl(14, 45%, 36%);
 }
 
-h3 {
+#time {
   font-family: "Outfit";
   color: hsl(332, 51%, 32%);
+  font-weight: 600;
 }
 
 * {
