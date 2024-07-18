@@ -93,7 +93,7 @@ body {
             }
 
             .icon-cart {
-                content: url(images/icon-cart.svg);
+                content: url("images/icon-cart.svg");
                 margin-inline-end: 10px;
             }
         }
@@ -127,7 +127,7 @@ body {
             height: 100%;
 
             img {
-                content: url(images/image-product-desktop.jpg);
+                content: url("images/image-product-desktop.jpg");
                 border-start-end-radius: 0px;
                 border-end-start-radius: 10px;
             }
