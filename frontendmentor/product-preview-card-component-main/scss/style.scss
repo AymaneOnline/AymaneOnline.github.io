@@ -100,11 +100,19 @@ body {
 
     .card-image {
         display: flex;
-        
+
         img {
             flex: 1;
             border-start-start-radius: 10px;
             border-start-end-radius: 10px;
+        }
+
+        .image-1 {
+            display: block;
+        }
+
+        .image-2 {
+            display: none;
         }
     }
 }
@@ -129,6 +137,14 @@ body {
             img {
                 border-start-end-radius: 0px;
                 border-end-start-radius: 10px;
+            }
+
+            .image-1 {
+                display: none;
+            }
+
+            .image-2 {
+                display: block;
             }
         }
     }
