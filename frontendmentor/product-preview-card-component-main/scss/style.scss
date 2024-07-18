@@ -93,7 +93,6 @@ body {
             }
 
             .icon-cart {
-                content: url("../product-preview-card-component-main/images/icon-cart.svg");
                 margin-inline-end: 10px;
             }
         }
@@ -101,10 +100,15 @@ body {
 
     .card-image {
         display: flex;
-        img {
+
+        .img {
             flex: 1;
             border-start-start-radius: 10px;
             border-start-end-radius: 10px;
+        }
+
+        .image-2 {
+            display: none;
         }
     }
 }
@@ -127,9 +131,16 @@ body {
             height: 100%;
 
             img {
-                content: url("../product-preview-card-component-main/images/image-product-desktop.jpg");
                 border-start-end-radius: 0px;
                 border-end-start-radius: 10px;
+            }
+
+            .image-1 {
+                display: none;
+            }
+
+            .image-2 {
+                display: block;
             }
         }
     }
