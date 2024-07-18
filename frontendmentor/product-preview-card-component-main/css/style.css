@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+.container {
+  max-width: 1440px;
+  padding: 0 15px;
+  margin: 0 auto;
+  overflow: auto;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+}
+
+body {
+  background-color: hsl(30, 38%, 92%);
+  min-height: 100svh;
+  display: flex;
+}
+
+.card {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+.card .card-content {
+  background-color: #fff;
+  border-end-start-radius: 10px;
+  border-end-end-radius: 10px;
+  padding: 25px;
+}
+.card .card-content > * {
+  margin-top: 15px;
+}
+.card .card-content .category {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: hsl(228, 12%, 48%);
+  margin-top: 0;
+}
+.card .card-content .name {
+  font-family: "Fraunces", serif;
+  font-size: 2.2rem;
+  color: hsl(212, 21%, 14%);
+}
+.card .card-content .description {
+  color: hsl(228, 12%, 48%);
+}
+.card .card-content .price {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.card .card-content .price .new-price {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  color: hsl(158, 36%, 37%);
+  margin-inline-end: 20px;
+}
+.card .card-content .price .old-price {
+  text-decoration: line-through;
+  color: hsl(228, 12%, 48%);
+}
+.card .card-content button {
+  width: 100%;
+  border: unset;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: hsl(158, 36%, 37%);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.card .card-content button:hover, .card .card-content button:focus, .card .card-content button:active {
+  background-color: #4da383;
+  transform: scale(0.99);
+}
+.card .card-content button .icon-cart {
+  content: url(/images/icon-cart.svg);
+  margin-inline-end: 10px;
+}
+.card .card-image {
+  display: flex;
+}
+.card .card-image img {
+  flex: 1;
+  border-start-start-radius: 10px;
+  border-start-end-radius: 10px;
+}
+
+@media screen and (min-width: 576px) {
+  .card {
+    flex-direction: row-reverse;
+    height: 400px;
+    width: 560px;
+  }
+  .card .card-content {
+    height: 100%;
+    max-inline-size: 30ch;
+    border-start-end-radius: 10px;
+    border-end-start-radius: 0px;
+  }
+  .card .card-image {
+    height: 100%;
+  }
+  .card .card-image img {
+    content: url(/images/image-product-desktop.jpg);
+    border-start-end-radius: 0px;
+    border-end-start-radius: 10px;
+  }
+}/*# sourceMappingURL=style.css.map */
