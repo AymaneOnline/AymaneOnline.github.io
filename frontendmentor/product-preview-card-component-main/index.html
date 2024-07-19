@@ -12,8 +12,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
@@ -36,8 +36,8 @@
         </p>
         <button><i class="icon-cart"><img src="images/icon-cart.svg" alt=""></i>Add to Cart</button>
       </div>
-      <img src="images/image-product-mobile.jpg" alt="" width="686" height="480" class="image-1">
-      <img src="images/image-product-desktop.jpg" alt="" width="600" height="900" class="image-2">
+      <img fetchpriority="low" src="images/image-product-mobile.jpg" alt="" width="686" height="480" class="image-1">
+      <img fetchpriority="low" src="images/image-product-desktop.jpg" alt="" width="600" height="900" class="image-2">
     </section>
   </main>
 </body>
