@@ -32,7 +32,7 @@ h1 span {
 }
 
 p {
-  color: hsl(229, 6%, 66%);
+  color: #585860;
 }
 
 .four-card {
@@ -61,7 +61,7 @@ p {
   max-inline-size: 35ch;
   min-inline-size: 35ch;
 }
-.four-card .card h3 {
+.four-card .card h2 {
   font-size: 1.3rem;
   color: hsl(234, 12%, 34%);
 }
