@@ -37,26 +37,35 @@ p {
 }
 
 .four-card {
+    display: grid;
     margin-top: 50px;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     grid-template-columns: auto;
 
-    .column {
-        .cyan {
-            margin-bottom: 30px;
-        }
+    .cyan {
+        align-self: center;
+        justify-self: center;
+        grid-row: 2/ span 3;
+        grid-column: 2/3;
     }
 
-    .column-2 {
-        display: flex;
-        flex-direction: column;
+    .red {
+        grid-row: 2/3;
+        grid-column: 3/4;
+    }
 
-        .card {
-            margin-bottom: 30px;
-        }
+    .orange {
+        grid-row: 3/4;
+        grid-column: 3/4;
+    }
+
+    .blue {
+        align-self: center;
+        justify-self: center;
+        grid-row: 2/ span 3;
+        grid-column: 4/5;
     }
 
     .card {
