@@ -73,7 +73,7 @@ body {
                 }
 
                 p {
-                    color: hsla(0, 0%, 81%, .7);
+                    color: darken(hsla(0, 0%, 81%, .7), 50);
                 }
             }
 
@@ -96,7 +96,7 @@ body {
                 }
 
                 p {
-                    color: $light-gray;
+                    color: darken($light-gray, 50);
                 }
             }
 
@@ -105,7 +105,7 @@ body {
             }
 
             p {
-                color: darken($light-gray, 30);
+                color: darken($light-gray, 50);
             }
         }
 
