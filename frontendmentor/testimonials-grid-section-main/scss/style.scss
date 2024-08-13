@@ -7,17 +7,18 @@
 
 html {
     font-family: "Barlow Semi Condensed", sans-serif;
-    font-size: 13px;
+    font-size: 1rem;
 }
 
 body {
     min-height: 100svh;
     background-color: $light-grayish-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .testimonials {
         display: grid;
-        margin-top: 70px;
-        margin-bottom: 70px;
         padding: 25px;
         gap: 25px;
 
@@ -140,10 +141,38 @@ body {
     }
 }
 
+@media screen and (min-width: 768px) {
+
+    .testimonials {
+        margin: 50px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .card-1 {
+        grid-column: 1/ span 2;
+        grid-row: 1/ 2;
+        justify-self: center;
+    }
+
+    .card-4 {
+        grid-column: 1/ span 2;
+        grid-row: 3/ 4;
+        justify-self: center;
+    }
+
+    .card-5 {
+        grid-column: 1/ span 2;
+        grid-row: 4/ 5;
+        justify-self: center;
+    }
+}
+
 @media screen and (min-width: 900px) {
 
     .testimonials {
-        margin: 70px;
+        max-width: 1920px;
+        max-height: 1080px;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
     }
@@ -174,5 +203,11 @@ body {
     .card-5 {
         grid-column: 4/5;
         grid-row: 1/ span 2;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .testimonials {
+        margin: 100px;
     }
 }
