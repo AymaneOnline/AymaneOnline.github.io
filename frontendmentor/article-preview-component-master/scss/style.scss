@@ -53,7 +53,9 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    // position: relative;
+    box-shadow: 6px 6px 5px hsla(0, 0%, 0%, 0.02),
+              25px 25px 20px hsla(0, 0%, 0%, 0.03),
+              100px 100px 80px hsla(0, 0%, 0%, 0.05);
 
     .img-box {
         width: 100%;
@@ -132,7 +134,7 @@ body {
                     transition: all 0.2s ease;
 
                     &:hover, &.active {
-                        background-color: $desaturated-dark-blue;
+                        background-color: $grayish-blue;
                         color: $light-grayish-blue;
                     }
                 }
@@ -151,6 +153,7 @@ body {
                     transition: all 0.2s ease;
                     transform: translate(0, 100%) scale(0);
                     border-radius: 0 0 10px 10px;
+                    box-shadow: 0 5px 20px -5px #0003;
                     z-index: 1;
 
                     &.active {
