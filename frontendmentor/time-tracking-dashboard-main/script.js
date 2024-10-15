@@ -13,7 +13,7 @@ monthlyBtn.addEventListener('click', () => updateTimeframes('monthly', 'Month'))
 
 // Function to fetch data from JSON file
 async function fetchData() {
-    const response = await fetch('/data.json');
+    const response = await fetch('./data.json');
     if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
     }
