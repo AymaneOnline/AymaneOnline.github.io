@@ -63,7 +63,7 @@ body {
 
             span {
                 font-size: 15px;
-                color: $pale-blue;
+                color: lighten($pale-blue, 20);
             }
 
             .firstname, .lastname {
@@ -85,7 +85,7 @@ body {
             button {
                 font-size: 17px;
                 font-weight: 300;
-                color: $desaturated-blue;
+                color: lighten($desaturated-blue, 20);
                 background-color: $dark-blue;
 
                 &.hover-active {

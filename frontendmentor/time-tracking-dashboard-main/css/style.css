@@ -54,7 +54,7 @@ body {
 }
 .dashboard .user .user-info span {
   font-size: 15px;
-  color: hsl(236, 100%, 87%);
+  color: white;
 }
 .dashboard .user .user-info .firstname, .dashboard .user .user-info .lastname {
   align-self: center;
@@ -73,7 +73,7 @@ body {
 .dashboard .user .time-opt button {
   font-size: 17px;
   font-weight: 300;
-  color: hsl(235, 45%, 61%);
+  color: #b9bce4;
   background-color: hsl(235, 46%, 20%);
 }
 .dashboard .user .time-opt button.hover-active {
