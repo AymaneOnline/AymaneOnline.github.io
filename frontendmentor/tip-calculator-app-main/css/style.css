@@ -62,12 +62,12 @@ body main .tip-calculator {
 body main .tip-calculator form {
   padding: 30px;
 }
-body main .tip-calculator form .label {
+body main .tip-calculator form label {
   color: hsl(186, 14%, 43%);
-  margin-bottom: 10px;
 }
 body main .tip-calculator form input {
   width: 100%;
+  margin-top: 10px;
   padding: 10px;
   padding-right: 20px;
   border-radius: 7px;
@@ -123,8 +123,9 @@ body main .tip-calculator form .tip-input .tip-buttons button.active {
   background-color: hsl(186, 14%, 43%);
 }
 body main .tip-calculator form .tip-input .tip-buttons #custom {
+  margin-top: unset;
   background-color: hsl(189, 41%, 97%);
-  color: hsl(184, 14%, 56%);
+  color: #4f6769;
 }
 body main .tip-calculator .result {
   margin: 20px;
@@ -140,11 +141,11 @@ body main .tip-calculator .result div {
   color: white;
 }
 body main .tip-calculator .result div span {
-  color: hsl(184, 14%, 56%);
+  color: #b9c9ca;
 }
 body main .tip-calculator .result div .value {
   font-size: 34px;
-  color: hsl(184, 14%, 56%);
+  color: #b9c9ca;
 }
 body main .tip-calculator .result button {
   margin-top: 30px;

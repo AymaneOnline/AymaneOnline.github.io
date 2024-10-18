@@ -66,13 +66,13 @@ body {
             form {
                 padding: 30px;
 
-                .label {
+                label {
                     color: $dark-grayish-cyan;
-                    margin-bottom: 10px;
                 }
 
                 input {
                     width: 100%;
+                    margin-top: 10px;
                     padding: 10px;
                     padding-right: 20px;
                     border-radius: 7px;
@@ -137,8 +137,9 @@ body {
                         }
 
                         #custom {
+                            margin-top: unset;
                             background-color: $very-light-grayish-cyan;
-                            color: darken($grayish-cyan, 10);
+                            color: darken($grayish-cyan, 20);
                         }
                     }
                 }
@@ -158,12 +159,12 @@ body {
                     color: white;
 
                     span {
-                        color: lighten($grayish-cyan, 10);
+                        color: lighten($grayish-cyan, 20);
                     }
 
                     .value {
                         font-size: 34px;
-                        color: lighten($grayish-cyan, 10);
+                        color: lighten($grayish-cyan, 20);
                     }
                 }
 
