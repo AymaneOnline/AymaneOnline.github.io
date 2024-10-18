@@ -138,7 +138,7 @@ body {
 
                         #custom {
                             background-color: $very-light-grayish-cyan;
-                            color: $grayish-cyan;
+                            color: darken($grayish-cyan, 10);
                         }
                     }
                 }
@@ -158,12 +158,12 @@ body {
                     color: white;
 
                     span {
-                        color: $grayish-cyan;
+                        color: lighten($grayish-cyan, 10);
                     }
 
                     .value {
                         font-size: 34px;
-                        color: $grayish-cyan;
+                        color: lighten($grayish-cyan, 10);
                     }
                 }
 
