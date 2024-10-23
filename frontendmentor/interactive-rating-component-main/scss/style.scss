@@ -86,9 +86,9 @@ main {
             margin-bottom: 20px;
             border: none;
             position: relative;
+            appearance: none;
 
             label {
-
 
                 input {
                     display: none;
@@ -124,7 +124,6 @@ main {
             }
 
             .rating-input {
-                -webkit-appearance: none;
                 appearance: none;
             }
         }
