@@ -112,6 +112,8 @@ main .rating-card fieldset label input:checked + .radio-check {
 }
 main .rating-card fieldset .rating-input {
   -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
 }
 main .rating-card button[type=submit] {
   margin-top: 10px;
