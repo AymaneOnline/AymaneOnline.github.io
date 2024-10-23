@@ -1,20 +1,27 @@
 const ratingState = document.querySelector("#rating-state");
 const thankYouState = document.querySelector("#thank-you-state");
 
-const ratingButtons = document.querySelectorAll(".rating-btn");
+const ratingInputs = document.querySelectorAll(".rating-input");
 const submitButton = document.querySelector('button[type="submit"]');
-const rating = document.querySelector("#rating");
+const rate = document.querySelector("#rate");
 
-ratingButtons.forEach(ratingButton => {
-    ratingButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        rating.textContent = ratingButton.textContent;
-    })
-});
 
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
 
+    let isRated = false;
+    ratingInputs.forEach(ratingInput => {
+        if (ratingInput.checked) {
+            rate.textContent = ratingInput.value;
+            isRated = true;
+        }
+    })
+
+    if (!isRated) {
+        alert('Please select a rating before submitting.');
+        return
+    }
+    
     ratingState.classList.add('hidden');
     thankYouState.classList.remove('hidden');
 })

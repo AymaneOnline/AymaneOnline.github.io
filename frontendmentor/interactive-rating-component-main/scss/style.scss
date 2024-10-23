@@ -29,6 +29,11 @@ li {
     display: none!important;
 }
 
+.visually-hidden {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
 html {
     font-family: "Overpass", sans-serif;
     font-weight: 400;
@@ -71,36 +76,55 @@ main {
         p {
             color: $light-grey;
             margin-bottom: 30px;
+            line-height: 2;
         }
 
-        ul {
+        fieldset {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
+            border: none;
+            position: relative;
 
-            button {
-                background-color: lighten($dark-blue, 5);
-                color: $light-grey;
-                border-radius: 50%;
-                font-size: 15px;
-                font-weight: 700;
-                width: 45px;
-                height: 45px;
-                line-height: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            label {
 
-                &:hover {
-                    background-color: $orange;
-                    color: $very-dark-blue;
+
+                input {
+                    display: none;
                 }
 
-                &:focus {
+                .radio-check {
+                    display: inline-block;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    vertical-align: middle;
+                    background-color: lighten($dark-blue, 5);
+                    color: $light-grey;
+                    font-size: 15px;
+                    font-weight: 700;
+                    line-height: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $orange;
+                        color: $dark-blue;
+                    }
+                }
+
+                input:checked + .radio-check {
                     background-color: white;
-                    color: $very-dark-blue;
+                    color: $dark-blue;
+                    border-color: #007bff;
                 }
+            }
+
+            .rating-input {
+                -webkit-appearance: none;
             }
         }
 
@@ -115,7 +139,7 @@ main {
             text-transform: uppercase;
             letter-spacing: 3px;
             width: 100%;
-            padding: 17px;
+            padding: 12px;
             border-radius: 30px;
 
             &:hover, &:focus {
@@ -138,9 +162,13 @@ main {
         .rating-p {
             background-color: lighten($dark-blue, 7);
             border-radius: 20px;
-            padding: 7px 15px 5px 15px;
+            padding: 11px 15px 5px 15px;
             color: $orange;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
+        }
+
+        .thank-p {
+            margin-bottom: 0!important;
         }
     }
 }

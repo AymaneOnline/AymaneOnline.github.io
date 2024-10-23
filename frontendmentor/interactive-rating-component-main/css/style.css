@@ -27,6 +27,11 @@ li {
   display: none !important;
 }
 
+.visually-hidden {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
 html {
   font-family: "Overpass", sans-serif;
   font-weight: 400;
@@ -67,33 +72,46 @@ main .rating-card h1 {
 main .rating-card p {
   color: hsl(217, 12%, 63%);
   margin-bottom: 30px;
+  line-height: 2;
 }
-main .rating-card ul {
+main .rating-card fieldset {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  border: none;
+  position: relative;
 }
-main .rating-card ul button {
-  background-color: #303a46;
-  color: hsl(217, 12%, 63%);
-  border-radius: 50%;
-  font-size: 15px;
-  font-weight: 700;
+main .rating-card fieldset label input {
+  display: none;
+}
+main .rating-card fieldset label .radio-check {
+  display: inline-block;
   width: 45px;
   height: 45px;
+  border-radius: 50%;
+  vertical-align: middle;
+  background-color: #303a46;
+  color: hsl(217, 12%, 63%);
+  font-size: 15px;
+  font-weight: 700;
   line-height: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
-main .rating-card ul button:hover {
+main .rating-card fieldset label .radio-check:hover {
   background-color: hsl(25, 97%, 53%);
-  color: hsl(216, 12%, 8%);
+  color: hsl(213, 19%, 18%);
 }
-main .rating-card ul button:focus {
+main .rating-card fieldset label input:checked + .radio-check {
   background-color: white;
-  color: hsl(216, 12%, 8%);
+  color: hsl(213, 19%, 18%);
+  border-color: #007bff;
+}
+main .rating-card fieldset .rating-input {
+  -webkit-appearance: none;
 }
 main .rating-card button[type=submit] {
   margin-top: 10px;
@@ -106,7 +124,7 @@ main .rating-card button[type=submit] {
   text-transform: uppercase;
   letter-spacing: 3px;
   width: 100%;
-  padding: 17px;
+  padding: 12px;
   border-radius: 30px;
 }
 main .rating-card button[type=submit]:hover, main .rating-card button[type=submit]:focus {
@@ -125,9 +143,12 @@ main #thank-you-state img {
 main #thank-you-state .rating-p {
   background-color: #343f4c;
   border-radius: 20px;
-  padding: 7px 15px 5px 15px;
+  padding: 11px 15px 5px 15px;
   color: hsl(25, 97%, 53%);
-  margin-bottom: 35px;
+  margin-bottom: 30px;
+}
+main #thank-you-state .thank-p {
+  margin-bottom: 0 !important;
 }
 
 @media screen and (min-width: 576px) {

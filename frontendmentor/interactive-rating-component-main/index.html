@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <meta name="description"
-        content="This is a solution of 'interactive-rating-component-main' from FrontEndMentor"
-        author="AymaneOnline">
+        content="This is a solution of 'interactive-rating-component-main' from FrontEndMentor by AymaneOnline">
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
@@ -26,14 +25,30 @@
         to help us improve our offering!
       </p>
       
-      <form action="">
-        <ul>
-          <li><button class="rating-btn">1</button></li>
-          <li><button class="rating-btn">2</button></li>
-          <li><button class="rating-btn">3</button></li>
-          <li><button class="rating-btn">4</button></li>
-          <li><button class="rating-btn">5</button></li>
-        </ul>
+      <form>
+        <fieldset>
+          <legend class="visually-hidden">Select a rating:</legend> 
+          <label for="rating-1">
+            <input class="rating-input" id="rating-1" name="rating" type="radio" value="1" required>
+            <span class="radio-check">1</span>
+          </label>
+          <label for="rating-2">
+            <input class="rating-input" id="rating-2" name="rating" type="radio" value="2">
+            <span class="radio-check">2</span> 
+          </label>
+          <label for="rating-3">
+            <input class="rating-input" id="rating-3" name="rating" type="radio" value="3">
+            <span class="radio-check">3</span> 
+          </label>
+          <label for="rating-4">
+            <input class="rating-input" id="rating-4" name="rating" type="radio" value="4">
+            <span class="radio-check">4</span> 
+          </label>
+          <label for="rating-5">
+            <input class="rating-input" id="rating-5" name="rating" type="radio" value="5">
+            <span class="radio-check">5</span> 
+          </label>
+        </fieldset>
   
         <button type="submit">Submit</button>
       </form>
@@ -41,14 +56,14 @@
     <!-- Rating state end -->
 
     <!-- Thank you state start -->
-    <div id="thank-you-state" class="rating-card hidden">
+    <div id="thank-you-state" class="rating-card hidden" aria-live="polite">
       <img src="images/illustration-thank-you.svg" alt="" role="presentation">
 
-      <p class="rating-p">You selected <span id="rating">4</span> out of 5</p>
+      <p class="rating-p">You selected <span id="rate"></span> out of 5</p>
 
       <h1>Thank you!</h1>
 
-      <p>
+      <p class="thank-p">
         We appreciate you taking the time to give a rating. If you ever need more support, 
         don’t hesitate to get in touch!
       </p>
