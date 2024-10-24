@@ -4,6 +4,7 @@ const thankYouState = document.querySelector("#thank-you-state");
 const ratingInputs = document.querySelectorAll(".rating-input");
 const submitButton = document.querySelector('button[type="submit"]');
 const rate = document.querySelector("#rate");
+const errorMessage = document.querySelector('#error-message');
 
 
 submitButton.addEventListener('click', (e) => {
@@ -18,8 +19,12 @@ submitButton.addEventListener('click', (e) => {
     })
 
     if (!isRated) {
-        alert('Please select a rating before submitting.');
-        return
+        errorMessage.classList.remove('hidden');
+        errorMessage.setAttribute('tabindex', -1);
+        errorMessage.focus();
+        return;
+    } else {
+        errorMessage.classList.add('hidden');
     }
     
     ratingState.classList.add('hidden');

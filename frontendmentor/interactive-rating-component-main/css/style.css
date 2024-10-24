@@ -155,6 +155,11 @@ main #thank-you-state .rating-p {
 main #thank-you-state .thank-p {
   margin-bottom: 0 !important;
 }
+main #error-message {
+  color: red; /* Ensure this is visible against the background */
+  font-size: 14px; /* Adjust as needed */
+  margin-bottom: -17px;
+}
 
 @media screen and (min-width: 576px) {
   .rating-card {

@@ -171,6 +171,12 @@ main {
             margin-bottom: 0!important;
         }
     }
+
+    #error-message {
+        color: red; /* Ensure this is visible against the background */
+        font-size: 14px; /* Adjust as needed */
+        margin-bottom: -17px;
+    }
 }
 
 @media screen and (min-width: 576px) {
