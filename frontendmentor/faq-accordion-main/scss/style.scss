@@ -82,7 +82,7 @@ main {
 
             p {
                 color: $grayish-purple;
-                font-size: .9rem;
+                font-size: .98rem;
             }
         }
 
@@ -95,17 +95,12 @@ main {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-weight: 600;
+            
 
             &:hover {
                 cursor: pointer;
-    
-                p {
-                    color: $light-purple;
-                }
-            }
-                
-            p {
-                font-weight: 600;
+                color: $light-purple;
             }
     
             img {
@@ -133,7 +128,8 @@ main {
     }
 
     .faq {
-        max-width: 570px;
+        max-width: 575px;
+        padding: 30px;
 
         h1 {
             font-size: 3rem;
