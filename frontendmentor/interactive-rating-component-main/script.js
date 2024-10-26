@@ -5,6 +5,7 @@ const ratingInputs = document.querySelectorAll(".rating-input");
 const submitButton = document.querySelector('button[type="submit"]');
 const rate = document.querySelector("#rate");
 const errorMessage = document.querySelector('#error-message');
+const radioChecks = document.querySelectorAll(".radio-check");
 
 
 submitButton.addEventListener('click', (e) => {
@@ -29,4 +30,15 @@ submitButton.addEventListener('click', (e) => {
     
     ratingState.classList.add('hidden');
     thankYouState.classList.remove('hidden');
+})
+
+// Accessibility
+
+radioChecks.forEach((check, index) => {
+    check.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            ratingInputs[index].checked = true;
+        }
+    })
 })
