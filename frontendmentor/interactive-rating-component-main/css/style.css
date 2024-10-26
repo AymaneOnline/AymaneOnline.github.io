@@ -28,14 +28,18 @@ li {
 }
 
 .visually-hidden {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
 }
 
 html {
   font-family: "Overpass", sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 0.938rem;
 }
 
 body {
@@ -104,14 +108,13 @@ main .rating-card fieldset label .radio-check {
   align-items: center;
   cursor: pointer;
 }
-main .rating-card fieldset label .radio-check:hover {
+main .rating-card fieldset label .radio-check:hover, main .rating-card fieldset label .radio-check:focus {
   background-color: hsl(25, 97%, 53%);
   color: hsl(213, 19%, 18%);
 }
 main .rating-card fieldset label input:checked + .radio-check {
   background-color: white;
   color: hsl(213, 19%, 18%);
-  border-color: #007bff;
 }
 main .rating-card fieldset .rating-input {
   -webkit-appearance: none;
