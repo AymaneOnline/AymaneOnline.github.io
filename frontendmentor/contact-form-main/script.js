@@ -92,3 +92,13 @@ document.addEventListener('change', (event) => {
         event.target.closest('.radio').classList.add('checked');
     }
 })
+
+// Accessibility (for checkbox)
+document.querySelector('.checkmark').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();  // Prevent default scrolling with Space
+      const checkbox = document.getElementById('consent-input');
+      checkbox.checked = !checkbox.checked;
+    }
+  });
+  
