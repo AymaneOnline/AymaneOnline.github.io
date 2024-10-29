@@ -147,7 +147,7 @@ svg#asterisk {
   cursor: pointer;
   margin-block-end: 0 !important;
 }
-#contact .query fieldset .radio:hover, #contact .query fieldset .radio:focus {
+#contact .query fieldset .radio:hover, #contact .query fieldset .radio:focus, #contact .query fieldset .radio:focus-within {
   border: 1px solid hsl(187, 24%, 22%);
   outline: none;
 }
@@ -295,7 +295,7 @@ svg#asterisk {
     justify-content: space-between !important;
   }
   .query fieldset .radio {
-    max-width: 290px;
+    max-width: 270px;
   }
   .message textarea {
     height: 96px !important;

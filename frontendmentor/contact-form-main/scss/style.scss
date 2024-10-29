@@ -161,7 +161,7 @@ svg#asterisk {
                 cursor: pointer;
                 margin-block-end: 0!important;
 
-                &:hover, &:focus {
+                &:hover, &:focus, &:focus-within {
                     border: 1px solid $grey-900;
                     outline: none;
                 }
@@ -343,7 +343,7 @@ svg#asterisk {
             justify-content: space-between!important;
 
             .radio {
-                max-width: 290px;
+                max-width: 270px;
             }
         }
     }

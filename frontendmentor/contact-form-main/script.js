@@ -93,12 +93,30 @@ document.addEventListener('change', (event) => {
     }
 })
 
-// Accessibility (for checkbox)
+// Accessibility
+
+// Select all radio container divs
+document.querySelectorAll('.input-control.radio').forEach(radioDiv => {
+    radioDiv.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault(); // Prevent scrolling with Space key
+            // Find the radio input inside this div and check it
+            const radioInput = radioDiv.querySelector('input[type="radio"]');
+            if (radioInput) {
+                radioInput.checked = true;
+                // Optionally trigger a change event to apply any styles or logic
+                radioInput.dispatchEvent(new Event('change'));
+            }
+        }
+    });
+});
+
+
 document.querySelector('.checkmark').addEventListener('keydown', function(event) {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();  // Prevent default scrolling with Space
       const checkbox = document.getElementById('consent-input');
       checkbox.checked = !checkbox.checked;
     }
-  });
+});
   
