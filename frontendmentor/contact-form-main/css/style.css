@@ -39,7 +39,7 @@ html {
 }
 
 body {
-  background-color: lightcyan;
+  background-color: hsl(148, 38%, 91%);
   min-height: 100svh;
   display: flex;
 }
