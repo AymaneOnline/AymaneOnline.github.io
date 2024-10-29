@@ -274,14 +274,18 @@ svg#asterisk {
   main {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 100px 0;
+  }
+  #contact {
+    padding: 40px;
   }
   .name {
     display: flex;
     justify-content: space-between;
   }
   .name input {
-    width: 290px;
+    width: 270px;
   }
   .name .input-control {
     margin-inline-end: 15px;
