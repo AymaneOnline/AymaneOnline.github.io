@@ -315,7 +315,12 @@ svg#asterisk {
     main {
         display: flex;
         justify-content: center;
+        align-items: center;
         margin: 100px 0;
+    }
+
+    #contact {
+        padding: 40px;
     }
 
     .name {
@@ -323,7 +328,7 @@ svg#asterisk {
         justify-content: space-between;
 
         input {
-            width: 290px;
+            width: 270px;
         }
 
         .input-control {
