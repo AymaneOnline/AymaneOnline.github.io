@@ -4,11 +4,11 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const overlay = document.querySelector('.overlay');
 
 openMenuBtn.addEventListener('click', (e) => {
-    mobileMenu.classList.remove('hidden');
+    mobileMenu.classList.remove('hidden-nav');
     overlay.classList.add('show-overlay');
 });
 
 closeMenuBtn.addEventListener('click', (e) => {
-    mobileMenu.classList.add('hidden')
+    mobileMenu.classList.add('hidden-nav')
     overlay.classList.remove('show-overlay');
 })

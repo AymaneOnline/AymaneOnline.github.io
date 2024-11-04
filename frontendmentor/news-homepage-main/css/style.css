@@ -51,6 +51,10 @@ li {
   width: 1px;
 }
 
+.hidden-nav {
+  right: -100% !important;
+}
+
 p {
   color: hsl(236, 13%, 42%);
   line-height: 1.6;
@@ -116,6 +120,7 @@ header nav #mobile-nav .mobile-menu {
   justify-content: start;
   align-items: end;
   padding: 30px 15px;
+  transition: right 0.3s ease;
 }
 header nav #mobile-nav .mobile-menu ul {
   height: 100%;

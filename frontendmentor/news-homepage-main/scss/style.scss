@@ -39,6 +39,10 @@ li {
     width: 1px;
 }
 
+.hidden-nav {
+    right: -100%!important;
+}
+
 p {
     color: $dark-grayish-blue;
     line-height: 1.6;
@@ -109,6 +113,7 @@ header {
                 justify-content: start;
                 align-items: end;
                 padding: 30px 15px;
+                transition: right .3s ease;
 
                 ul {
                     height: 100%;
