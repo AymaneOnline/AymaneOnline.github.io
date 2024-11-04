@@ -68,6 +68,20 @@ body {
     position: relative;
 }
 
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    display: none;
+    opacity: 0;
+    height: 100%;
+}
+
+.show-overlay {
+    display: block!important;
+    opacity: 0.5;
+}
+
 header {
     width: 100%;
     display: flex;
@@ -95,19 +109,24 @@ header {
                 justify-content: start;
                 align-items: end;
                 padding: 30px 15px;
-                box-shadow: -200px 2px 1px 0px rgba(0, 0, 0, 0.486);
 
                 ul {
+                    height: 100%;
                     align-self: self-start;
                     margin-block-start: 150px;
                     display: flex;
                     flex-direction: column;
                     gap: 30px;
+                    position: fixed;
 
                     a {
                         color: $very-dark-blue;
                         font-size: 1.2rem;
                     }
+                }
+
+                #close-menu-btn {
+                    position: fixed;
                 }
             }
         }
@@ -124,6 +143,7 @@ header {
 }
 
 main {
+
     section {
         article {
 

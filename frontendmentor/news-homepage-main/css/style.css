@@ -80,6 +80,20 @@ body {
   position: relative;
 }
 
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  display: none;
+  opacity: 0;
+  height: 100%;
+}
+
+.show-overlay {
+  display: block !important;
+  opacity: 0.5;
+}
+
 header {
   width: 100%;
   display: flex;
@@ -102,18 +116,22 @@ header nav #mobile-nav .mobile-menu {
   justify-content: start;
   align-items: end;
   padding: 30px 15px;
-  box-shadow: -200px 2px 1px 0px rgba(0, 0, 0, 0.486);
 }
 header nav #mobile-nav .mobile-menu ul {
+  height: 100%;
   align-self: self-start;
   margin-block-start: 150px;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  position: fixed;
 }
 header nav #mobile-nav .mobile-menu ul a {
   color: hsl(240, 100%, 5%);
   font-size: 1.2rem;
+}
+header nav #mobile-nav .mobile-menu #close-menu-btn {
+  position: fixed;
 }
 header nav #desktop-nav {
   display: none;
