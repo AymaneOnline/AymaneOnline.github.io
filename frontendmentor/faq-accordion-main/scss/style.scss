@@ -125,6 +125,7 @@ main {
 @media screen and (min-width: 375px) {
     body {
         background-image: url("../assets/images/background-pattern-desktop.svg");
+        background-size: contain;
     }
 
     .faq {
