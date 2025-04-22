@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <meta name="description" content="This is a solution of 'ecommerce-product-page-main' challenge from Frontend Mentor by AymaneOnline">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
@@ -15,49 +15,57 @@
 
 </head>
 <body>
-  <div id="overlay" aria-hidden="true"></div>
-  <div id="lightbox" class="hidden" role="dialog" aria-label="Product image gallery" aria-modal="true" tabindex="-1">
+  <div id="overlay"></div>
+  <div id="lightbox" class="hidden">
     <div class="images">
       <div class="closing-btn">
-        <button id="close-lightbox" aria-label="Close image gallery"><ion-icon name="close-outline"></ion-icon></button>
+        <button id="close-lightbox"><ion-icon name="close-outline"></ion-icon></button>
       </div>
-      <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Product image gallery">
+      <div class="carousel" data-carousel>
         <ul data-slides>
-          <li class="slide" data-active aria-roledescription="slide" aria-label="Product image 1 of 4">
-            <img src="images/image-product-1.jpg" alt="Fall Limited Edition Sneakers First Image" width="1000" height="1000">
+          <li class="slide" data-active>
+            <button>
+              <img src="images/image-product-1.jpg" alt="Fall Limited Edition Sneakers First Image" width="1000" height="1000">
+            </button>
           </li>
-          <li class="slide" aria-roledescription="slide" aria-label="Product image 2 of 4">
-            <img src="images/image-product-2.jpg" alt="Fall Limited Edition Sneakers Second Image" width="1000" height="1000">
+          <li class="slide">
+            <button>
+              <img src="images/image-product-2.jpg" alt="Fall Limited Edition Sneakers Second Image" width="1000" height="1000">
+            </button>
           </li>
-          <li class="slide" aria-roledescription="slide" aria-label="Product image 3 of 4">
-            <img src="images/image-product-3.jpg" alt="Fall Limited Edition Sneakers Third Image" width="1000" height="1000">
+          <li class="slide">
+            <button>
+              <img src="images/image-product-3.jpg" alt="Fall Limited Edition Sneakers Third Image" width="1000" height="1000">
+            </button>
           </li>
-          <li class="slide" aria-roledescription="slide" aria-label="Product image 4 of 4">
-            <img src="images/image-product-4.jpg" alt="Fall Limited Edition Sneakers Fourth Image" width="1000" height="1000">
+          <li class="slide">
+            <button>
+              <img src="images/image-product-4.jpg" alt="Fall Limited Edition Sneakers Fourth Image" width="1000" height="1000">
+            </button>
           </li>
         </ul>
 
         <div class="navigator">
-          <button class="previous" data-carousel-button="previous" aria-label="Previous image">
+          <button class="previous" data-carousel-button="previous">
             <ion-icon name="chevron-back-outline"></ion-icon>
           </button>
-          <button class="next" data-carousel-button="next" aria-label="Next image">
+          <button class="next" data-carousel-button="next">
             <ion-icon name="chevron-forward-outline"></ion-icon>
           </button>
         </div>
       </div>
 
-      <ul class="images-thumbnail" data-thumbnails role="tablist" aria-label="Product thumbnail images">
-        <li><button data-active="true" data-thumbnail-button="0" role="tab" aria-selected="true" aria-controls="slide-0"><img src="images/image-product-1-thumbnail.jpg" alt="Fall Limited Edition First Sneakers thumbnail" width="176" height="176"></button></li>
-        <li><button data-thumbnail-button="1" role="tab" aria-selected="false" aria-controls="slide-1"><img src="images/image-product-2-thumbnail.jpg" alt="Fall Limited Edition Second Sneakers thumbnail" width="176" height="176"></button></li>
-        <li><button data-thumbnail-button="2" role="tab" aria-selected="false" aria-controls="slide-2"><img src="images/image-product-3-thumbnail.jpg" alt="Fall Limited Edition Third Sneakers thumbnail" width="176" height="176"></button></li>
-        <li><button data-thumbnail-button="3" role="tab" aria-selected="false" aria-controls="slide-3"><img src="images/image-product-4-thumbnail.jpg" alt="Fall Limited Edition Fourth Sneakers thumbnail" width="176" height="176"></button></li>
+      <ul class="images-thumbnail" data-thumbnails>
+        <li><button data-active="true" data-thumbnail-button="0"><img src="images/image-product-1-thumbnail.jpg" alt="Fall Limited Edition First Sneakers" width="176" height="176"></button></li>
+        <li><button data-thumbnail-button="1"><img src="images/image-product-2-thumbnail.jpg" alt="Fall Limited Edition Second Sneakers" width="176" height="176"></button></li>
+        <li><button data-thumbnail-button="2"><img src="images/image-product-3-thumbnail.jpg" alt="Fall Limited Edition Third Sneakers" width="176" height="176"></button></li>
+        <li><button data-thumbnail-button="3"><img src="images/image-product-4-thumbnail.jpg" alt="Fall Limited Edition Fourth Sneakers" width="176" height="176"></button></li>
       </ul>
     </div>
   </div>
   <header>
     <div class="container-logo">
-      <button id="open-menu" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+      <button id="open-menu">
         <ion-icon name="menu-outline"></ion-icon>
       </button>
       <div class="space"></div>
@@ -66,9 +74,9 @@
       </h1>
     </div>
 
-    <nav aria-label="Main">
-      <div id="mobile-nav" aria-hidden="true" aria-labelledby="open-menu">
-        <button id="close-menu" aria-label="Close menu">
+    <nav>
+      <div id="mobile-nav">
+        <button id="close-menu">
           <ion-icon name="close-outline"></ion-icon>
         </button>
         <ul>
@@ -90,24 +98,24 @@
     </nav>
 
     <div class="user">
-      <button id="cart" aria-label="Shopping cart" aria-expanded="false" aria-controls="cart-box">
+      <button id="cart">
         <ion-icon name="cart-outline"></ion-icon>
-        <span class="cart-quantity hidden" aria-live="polite"></span>
+        <span class="cart-quantity hidden"></span>
       </button>
-      <div id="cart-box" class="cart-box hidden" role="dialog" aria-labelledby="cart-heading">
-        <p id="cart-heading">Cart</p>
+      <div id="cart-box" class="cart-box hidden">
+        <p>Cart</p>
         <div class="cart-content">
-          <p id="empty" aria-live="polite"> 
+          <p id="empty"> 
             Your cart is empty
           </p>
-          <div id="filled" class="hidden" aria-live="polite">
+          <div id="filled" class="hidden">
             <div class="cart-product">
-              <img src="images/image-product-1-thumbnail.jpg" alt="Fall Limited Edition Sneakers thumbnail" width="176" height="176">
+              <img src="images/image-product-1-thumbnail.jpg" alt="" width="176" height="176">
               <div class="product-info">
                 <p>Fall Limited Edition Sneakers</p>
                 <p>$125 x <span class="cart-quantity"></span> <span id="product-total"></span></p>
               </div>
-              <button id="delete-product" aria-label="Remove Fall Limited Edition Sneakers from cart">
+              <button id="delete-product">
                 <ion-icon name="trash-outline"></ion-icon>
               </button>
             </div>
@@ -117,64 +125,66 @@
         </div>
       </div>
       <div class="space"></div>
-      <button aria-label="User profile">
-        <img src="images/image-avatar.png" alt="" id="profile" width="100" height="100">
+      <button>
+        <img src="images/image-avatar.png" alt="Profile" id="profile" width="100" height="100">
       </button>
     </div>
   </header>
 
   <main>
-    <section aria-label="Product details">
+    <section>
       <div class="images">
-        <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Product image gallery">
+        <div class="carousel" data-carousel>
           <ul data-slides>
-            <li class="slide" data-active id="slide-0" aria-roledescription="slide" aria-label="Product image 1 of 4">
-              <button aria-label="Open image gallery">
+            <li class="slide" data-active>
+              <button>
                 <img src="images/image-product-1.jpg" alt="Fall Limited Edition Sneakers First Image" width="1000" height="1000">
               </button>
             </li>
-            <li class="slide" id="slide-1" aria-roledescription="slide" aria-label="Product image 2 of 4">
-              <button aria-label="Open image gallery">
+            <li class="slide">
+              <button>
                 <img src="images/image-product-2.jpg" alt="Fall Limited Edition Sneakers Second Image" width="1000" height="1000">
               </button>
             </li>
-            <li class="slide" id="slide-2" aria-roledescription="slide" aria-label="Product image 3 of 4">
-              <button aria-label="Open image gallery">
+            <li class="slide">
+              <button>
                 <img src="images/image-product-3.jpg" alt="Fall Limited Edition Sneakers Third Image" width="1000" height="1000">
               </button>
             </li>
-            <li class="slide" id="slide-3" aria-roledescription="slide" aria-label="Product image 4 of 4">
-              <button aria-label="Open image gallery">
+            <li class="slide">
+              <button>
                 <img src="images/image-product-4.jpg" alt="Fall Limited Edition Sneakers Fourth Image" width="1000" height="1000">
               </button>
             </li>
           </ul>
 
           <div class="navigator">
-            <button id="previous" data-carousel-button="previous" aria-label="Previous image">
+            <button id="previous" data-carousel-button="previous">
               <ion-icon name="chevron-back-outline"></ion-icon>
             </button>
-            <button id="next" data-carousel-button="next" aria-label="Next image">
+            <button id="next" data-carousel-button="next">
               <ion-icon name="chevron-forward-outline"></ion-icon>
             </button>
           </div>
         </div>
   
-        <ul class="images-thumbnail" data-thumbnails role="tablist" aria-label="Product thumbnail images">
-          <li><button data-active="true" data-thumbnail-button="0" role="tab" aria-selected="true" aria-controls="slide-0"><img src="images/image-product-1-thumbnail.jpg" alt="Fall Limited Edition First Sneakers thumbnail" width="176" height="176"></button></li>
-          <li><button data-thumbnail-button="1" role="tab" aria-selected="false" aria-controls="slide-1"><img src="images/image-product-2-thumbnail.jpg" alt="Fall Limited Edition Second Sneakers thumbnail" width="176" height="176"></button></li>
-          <li><button data-thumbnail-button="2" role="tab" aria-selected="false" aria-controls="slide-2"><img src="images/image-product-3-thumbnail.jpg" alt="Fall Limited Edition Third Sneakers thumbnail" width="176" height="176"></button></li>
-          <li><button data-thumbnail-button="3" role="tab" aria-selected="false" aria-controls="slide-3"><img src="images/image-product-4-thumbnail.jpg" alt="Fall Limited Edition Fourth Sneakers thumbnail" width="176" height="176"></button></li>
+        <ul class="images-thumbnail" data-thumbnails>
+          <li><button data-active="true" data-thumbnail-button="0"><img src="images/image-product-1-thumbnail.jpg" alt="Fall Limited Edition First Sneakers" width="176" height="176"></button></li>
+          <li><button data-thumbnail-button="1"><img src="images/image-product-2-thumbnail.jpg" alt="Fall Limited Edition Second Sneakers" width="176" height="176"></button></li>
+          <li><button data-thumbnail-button="2"><img src="images/image-product-3-thumbnail.jpg" alt="Fall Limited Edition Third Sneakers" width="176" height="176"></button></li>
+          <li><button data-thumbnail-button="3"><img src="images/image-product-4-thumbnail.jpg" alt="Fall Limited Edition Fourth Sneakers" width="176" height="176"></button></li>
         </ul>
       </div>
       
+      
+
       <div class="text">
         <p class="brand">Sneaker Company</p>
         <h2>Fall Limited Edition Sneakers</h2>
 
         <p class="description">
           These low-profile sneakers are your perfect casual wear companion. Featuring a 
-          durable rubber outer sole, they'll withstand everything the weather can offer.
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
         </p>
         
         <div class="price">
@@ -186,13 +196,9 @@
         <div class="product-add">
           <div class="input-control">
             <label for="quantity" class="visually-hidden">Quantity:</label>
-            <input type="number" id="quantity" min="0" max="10" value="0" aria-label="Product quantity">
-            <button id="minus" class="minus" aria-label="Decrease quantity">
-              <ion-icon name="remove-outline"></ion-icon>
-            </button>
-            <button id="plus" class="plus" aria-label="Increase quantity">
-              <ion-icon name="add-outline"></ion-icon>
-            </button>
+            <input id="quantity" type="number" min="1" value="0">
+            <button id="minus" class="minus"><ion-icon name="remove-outline"></ion-icon></button>
+            <button id="plus" class="plus"><ion-icon name="add-outline"></ion-icon></button>
           </div>
 
           <button id="addBtn" aria-label="Add to cart - Fall Limited Edition Sneakers">

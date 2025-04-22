@@ -352,7 +352,9 @@ main .text .product-add .input-control button {
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 18px;
+  top: 5px;
+  width: 48px;
+  height: 48px;
 }
 main .text .product-add .input-control button:hover ion-icon {
   color: hsl(26, 100%, 55%);
@@ -365,10 +367,10 @@ main .text .product-add .input-control button ion-icon:hover {
   color: #ff9a4d;
 }
 main .text .product-add .input-control .minus {
-  left: 20px;
+  left: 5px;
 }
 main .text .product-add .input-control .plus {
-  right: 20px;
+  right: 5px;
 }
 main .text .product-add #addBtn {
   height: 56px;
