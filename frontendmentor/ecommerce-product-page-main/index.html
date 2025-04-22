@@ -98,7 +98,7 @@
     </nav>
 
     <div class="user">
-      <button id="cart">
+      <button id="cart" aria-label="Cart button">
         <ion-icon name="cart-outline"></ion-icon>
         <span class="cart-quantity hidden"></span>
       </button>
@@ -197,8 +197,8 @@
           <div class="input-control">
             <label for="quantity" class="visually-hidden">Quantity:</label>
             <input id="quantity" type="number" min="1" value="0">
-            <button id="minus" class="minus"><ion-icon name="remove-outline"></ion-icon></button>
-            <button id="plus" class="plus"><ion-icon name="add-outline"></ion-icon></button>
+            <button id="minus" class="minus" aria-label="Reduce quantity"><ion-icon name="remove-outline"></ion-icon></button>
+            <button id="plus" class="plus" aria-label="Increase quantity"><ion-icon name="add-outline"></ion-icon></button>
           </div>
 
           <button id="addBtn" aria-label="Add to cart - Fall Limited Edition Sneakers">
