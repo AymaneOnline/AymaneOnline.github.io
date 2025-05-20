@@ -26,8 +26,7 @@ li {
 }
 
 .visually-hidden {
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
@@ -68,6 +67,113 @@ body {
 
 .show-overlay {
   display: block !important;
+}
+
+#lightbox {
+  position: fixed;
+  min-height: 100svh;
+  width: 100%;
+  z-index: 3;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#lightbox .images .closing-btn {
+  display: flex;
+  justify-content: end;
+  margin-block-end: 20px;
+}
+#lightbox .images .closing-btn #close-lightbox {
+  background: transparent;
+}
+#lightbox .images .closing-btn #close-lightbox ion-icon {
+  font-size: 2rem;
+  color: hsl(26, 100%, 55%);
+}
+#lightbox .images .carousel {
+  flex: 1;
+  min-width: 400px;
+  height: 450px;
+  position: relative;
+}
+#lightbox .images .carousel .slide {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+#lightbox .images .carousel .slide[data-active] {
+  opacity: 1;
+}
+#lightbox .images .carousel .slide button {
+  max-width: calc(100% - 40px);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#lightbox .images .carousel .slide img {
+  max-width: 100%;
+  height: auto;
+  max-height: unset;
+  border-radius: 20px;
+}
+#lightbox .images .images-thumbnail {
+  max-width: calc(100% - 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-block-start: 30px;
+  margin-inline-start: 20px;
+}
+#lightbox .images .images-thumbnail button {
+  background-color: transparent;
+  border-radius: 16px;
+}
+#lightbox .images .images-thumbnail button img {
+  width: 100%;
+  min-width: 66px;
+  max-width: 90px;
+  height: auto;
+  border-radius: 15px;
+}
+#lightbox .images .images-thumbnail button:hover img, #lightbox .images .images-thumbnail button:focus img, #lightbox .images .images-thumbnail button[data-active=true] img {
+  border: 2px solid hsl(26, 100%, 55%);
+  opacity: 0.5;
+}
+#lightbox .images .navigator button {
+  position: absolute;
+  top: calc(50% - 20px);
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#lightbox .images .navigator button:hover ion-icon {
+  color: hsl(26, 100%, 55%);
+}
+#lightbox .images .navigator button ion-icon {
+  font-size: 1.25rem;
+}
+#lightbox .images .navigator .previous {
+  left: 10px;
+}
+#lightbox .images .navigator .previous ion-icon {
+  margin-inline-end: 2px;
+}
+#lightbox .images .navigator .next {
+  right: 10px;
+}
+#lightbox .images .navigator .next ion-icon {
+  margin-inline-start: 2px;
 }
 
 header {
@@ -240,8 +346,7 @@ main .images .carousel li > button {
 main .images .carousel li > button img {
   width: 100%;
   height: 300px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 main .images .carousel .navigator button {
   position: absolute;
@@ -260,16 +365,16 @@ main .images .carousel .navigator button:hover ion-icon {
 main .images .carousel .navigator button ion-icon {
   font-size: 1.25rem;
 }
-main .images .carousel .navigator .previous {
+main .images .carousel .navigator #previous {
   left: 15px;
 }
-main .images .carousel .navigator .previous ion-icon {
+main .images .carousel .navigator #previous ion-icon {
   margin-inline-end: 2px;
 }
-main .images .carousel .navigator .next {
+main .images .carousel .navigator #next {
   right: 15px;
 }
-main .images .carousel .navigator .next ion-icon {
+main .images .carousel .navigator #next ion-icon {
   margin-inline-start: 2px;
 }
 main .images .images-thumbnail {
@@ -393,100 +498,34 @@ main .text .product-add #addBtn:hover {
   body {
     position: relative;
   }
-  body #lightbox {
-    position: fixed;
-    min-height: 100svh;
-    width: 100%;
-    z-index: 3;
-    top: 0;
+  body #lightbox .images .carousel {
+    flex: 1;
+    min-width: 500px;
+  }
+  body #lightbox .images .carousel .slide button {
+    max-width: calc(100% - 40px);
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  body #lightbox .images .closing-btn {
-    display: flex;
-    justify-content: end;
-    margin-block-end: 20px;
-  }
-  body #lightbox .images .closing-btn #close-lightbox {
-    background: transparent;
-  }
-  body #lightbox .images .closing-btn #close-lightbox ion-icon {
-    font-size: 2rem;
-    color: hsl(26, 100%, 55%);
-  }
-  body #lightbox .images .carousel {
-    flex: 1;
-    min-width: 400px;
-    height: 450px;
-    position: relative;
-  }
-  body #lightbox .images .carousel .slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  body #lightbox .images .carousel .slide[data-active] {
-    opacity: 1;
-  }
-  body #lightbox .images .carousel .slide button {
-    border-radius: 20px;
-  }
   body #lightbox .images .carousel .slide img {
-    max-width: 450px;
+    max-width: 100%;
     height: auto;
     max-height: unset;
     border-radius: 20px;
   }
   body #lightbox .images .images-thumbnail {
-    display: flex;
-    gap: 30px;
-    margin-block-start: 30px;
-  }
-  body #lightbox .images .images-thumbnail button {
-    background-color: transparent;
-    border-radius: 16px;
-  }
-  body #lightbox .images .images-thumbnail button img {
-    width: 100%;
-    min-width: 66px;
-    max-width: 90px;
-    height: auto;
-    border-radius: 15px;
-  }
-  body #lightbox .images .images-thumbnail button:hover img, body #lightbox .images .images-thumbnail button:focus img, body #lightbox .images .images-thumbnail button[data-active=true] img {
-    border: 2px solid hsl(26, 100%, 55%);
-    opacity: 0.5;
-  }
-  body #lightbox .images .navigator button {
-    position: absolute;
-    top: calc(50% - 20px);
-    background-color: white;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
+    max-width: calc(100% - 40px);
+    margin-inline-start: 20px;
     justify-content: center;
     align-items: center;
   }
-  body #lightbox .images .navigator button:hover ion-icon {
-    color: hsl(26, 100%, 55%);
-  }
-  body #lightbox .images .navigator button ion-icon {
-    font-size: 1.25rem;
-  }
   body #lightbox .images .navigator .previous {
-    left: -20px;
-  }
-  body #lightbox .images .navigator .previous ion-icon {
-    margin-inline-end: 2px;
+    left: 0px;
   }
   body #lightbox .images .navigator .next {
-    right: -20px;
-  }
-  body #lightbox .images .navigator .next ion-icon {
-    margin-inline-start: 2px;
+    right: 0px;
   }
   header {
     max-width: 1120px;
@@ -605,12 +644,10 @@ main .text .product-add #addBtn:hover {
   }
   main section .text .price .price-new {
     grid-row: 1;
-    width: -moz-fit-content;
     width: fit-content;
   }
   main section .text .price .promo {
     grid-row: 1;
-    width: -moz-fit-content;
     width: fit-content;
   }
   main section .text .price .price-old {

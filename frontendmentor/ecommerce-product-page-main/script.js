@@ -59,6 +59,24 @@ mainElement.querySelectorAll("[data-carousel-button]").forEach(button => {
     });
 });
 
+// 🎠 Carousel Navigation
+// Navigate between image slides using next/previous buttons
+document.querySelectorAll("[data-carousel-button]").forEach(button => {
+  button.addEventListener("click", () => {
+    const offset = button.dataset.carouselButton === "next" ? 1 : -1;
+    const slides = button.closest("[data-carousel]").querySelector("[data-slides]");
+    const activeSlide = slides.querySelector("[data-active]");
+
+    let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+    newIndex = (newIndex + slides.children.length) % slides.children.length;
+
+    // Activate new slide and remove the current one
+    slides.children[newIndex].dataset.active = true;
+    delete activeSlide.dataset.active;
+  });
+});
+
+
 // 🖼️ Thumbnail Click Handling (Event Delegation)
 // Clicking a thumbnail image changes the active slide
 mainElement.querySelector("[data-thumbnails]").addEventListener("click", (event) => {

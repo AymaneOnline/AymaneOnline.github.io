@@ -74,6 +74,144 @@ body {
     display: block !important;
 }
 
+        #lightbox {
+            position: fixed;
+            min-height: 100svh;
+            width: 100%;
+            z-index: 3;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .images {
+
+                .closing-btn {
+                    display: flex;
+                    justify-content: end;
+                    margin-block-end: 20px;
+
+                    #close-lightbox {
+                        background: transparent;
+    
+                        ion-icon {
+                            font-size: 2rem;
+                            color: $orange;
+                        }
+                    }
+                }
+                
+                .carousel {
+                    flex: 1;
+                    min-width: 400px;
+                    height: 450px;
+                    position: relative;
+    
+                    .slide {
+                        position: absolute;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        inset: 0;
+                        opacity: 0;
+                        transition: opacity .3s ease;
+    
+                        &[data-active] {
+                            opacity: 1;
+                        }
+
+                        button {
+                            max-width: calc(100% - 40px);
+                            border-radius: 20px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+    
+                        img {
+                            max-width: 100%;
+                            height: auto;
+                            max-height: unset;
+                            border-radius: 20px;
+                        }
+
+                    }
+                }
+
+                .images-thumbnail {
+                    max-width: calc(100% - 40px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 30px;
+                    margin-block-start: 30px;
+                    margin-inline-start: 20px;
+
+                    button {
+                        background-color: transparent;
+                        border-radius: 16px;
+
+                        img {
+                            width: 100%;
+                            min-width: 66px;
+                            max-width: 90px;
+                            height: auto;
+                            border-radius: 15px;
+                        }
+
+                        &:hover, &:focus, &[data-active="true"] {
+
+                            img {
+                                border: 2px solid $orange;
+                                opacity: .5;
+                            }
+                        }
+                    }
+                }
+
+                .navigator {
+
+                    button {
+                        position: absolute;
+                        top: calc(50% - 20px);
+                        background-color: white;
+                        border-radius: 50%;
+                        width: 40px;
+                        height: 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+    
+                        &:hover {
+                            ion-icon {
+                                color: $orange;
+                            }
+                        }
+    
+                        ion-icon {
+                            font-size: 1.25rem;
+                        }
+                    }
+    
+                    .previous {
+                        left: 10px;
+    
+                        ion-icon {
+                            margin-inline-end: 2px;
+                        }
+                    }
+    
+                    .next {
+                        right: 10px;
+    
+                        ion-icon {
+                            margin-inline-start: 2px;
+                        }
+                    }
+                }
+            }    
+        }
+
 header {
     width: 100%;
     max-width: 1200px;
@@ -306,7 +444,7 @@ main {
                     }
                 }
 
-                .previous {
+                #previous {
                     left: 15px;
 
                     ion-icon {
@@ -314,7 +452,7 @@ main {
                     }
                 }
 
-                .next {
+                #next {
                     right: 15px;
 
                     ion-icon {
@@ -473,130 +611,47 @@ main {
         position: relative;
 
         #lightbox {
-            position: fixed;
-            min-height: 100svh;
-            width: 100%;
-            z-index: 3;
-            top: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
             .images {
 
-                .closing-btn {
-                    display: flex;
-                    justify-content: end;
-                    margin-block-end: 20px;
-
-                    #close-lightbox {
-                        background: transparent;
-    
-                        ion-icon {
-                            font-size: 2rem;
-                            color: $orange;
-                        }
-                    }
-                }
-                
                 .carousel {
                     flex: 1;
-                    min-width: 400px;
-                    height: 450px;
-                    position: relative;
-    
+                    min-width: 500px;
+
                     .slide {
-                        position: absolute;
-                        inset: 0;
-                        opacity: 0;
-                        transition: opacity .3s ease;
-    
-                        &[data-active] {
-                            opacity: 1;
+                        button {
+                            max-width: calc(100% - 40px);
+                            border-radius: 20px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
                         }
 
-                        button {
-                            border-radius: 20px;
-                        }
-    
                         img {
-                            max-width: 450px;
+                            max-width: 100%;
                             height: auto;
                             max-height: unset;
                             border-radius: 20px;
                         }
-
                     }
                 }
 
                 .images-thumbnail {
-                    display: flex;
-                    gap: 30px;
-                    margin-block-start: 30px;
-
-                    button {
-                        background-color: transparent;
-                        border-radius: 16px;
-
-                        img {
-                            width: 100%;
-                            min-width: 66px;
-                            max-width: 90px;
-                            height: auto;
-                            border-radius: 15px;
-                        }
-
-                        &:hover, &:focus, &[data-active="true"] {
-
-                            img {
-                                border: 2px solid $orange;
-                                opacity: .5;
-                            }
-                        }
-                    }
+                    max-width: calc(100% - 40px);
+                    margin-inline-start: 20px;
+                    justify-content: center;
+                    align-items: center;
                 }
 
                 .navigator {
-
-                    button {
-                        position: absolute;
-                        top: calc(50% - 20px);
-                        background-color: white;
-                        border-radius: 50%;
-                        width: 40px;
-                        height: 40px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-    
-                        &:hover {
-                            ion-icon {
-                                color: $orange;
-                            }
-                        }
-    
-                        ion-icon {
-                            font-size: 1.25rem;
-                        }
-                    }
-    
                     .previous {
-                        left: -20px;
-    
-                        ion-icon {
-                            margin-inline-end: 2px;
-                        }
+                        left: 0px;
                     }
-    
+
                     .next {
-                        right: -20px;
-    
-                        ion-icon {
-                            margin-inline-start: 2px;
-                        }
+                        right: 0px;
                     }
                 }
-            }    
+            }
         }
     }
     
