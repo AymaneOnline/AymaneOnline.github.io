@@ -44,9 +44,20 @@ body.--hiddenOverflow {
 }
 
 .header {
-  background-image: url("../images/mobile/image-hero.jpg");
-  background-repeat: no-repeat;
   padding: 50px 20px;
+  position: relative;
+}
+.header__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 100svh;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 .header .nav {
   display: flex;
