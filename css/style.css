@@ -1,672 +1,435 @@
-*, *::before, *::after {
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-button {
-  border: none;
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-}
-
-img, ion-icon {
-  display: block;
 }
 
 li {
   list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+  color: #343434;
+}
+
 .hidden {
-  display: none !important;
-}
-
-.visually-hidden {
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-ion-icon[name=cart-outline] {
-  color: hsl(220, 13%, 13%);
-  font-size: 1.65rem;
+  display: none;
 }
 
 html {
-  font-size: 1rem;
-  font-family: "Kumbh Sans", sans-serif;
-  line-height: 1.5;
+  font-family: "Baloo 2", sans-serif;
+  color: #343434;
 }
 
 body {
   min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
 }
-
-#overlay {
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 2;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  display: none;
-  transition: left 0.2s ease-in-out;
-  inset: 0;
+body.dark-mode {
+  background-color: #343434;
 }
-
-.show-overlay {
-  display: block !important;
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode p, body.dark-mode a {
+  color: #fff;
 }
-
-#lightbox {
-  position: fixed;
-  min-height: 100svh;
-  width: 100%;
-  z-index: 3;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body.dark-mode svg {
+  fill: #fff;
 }
-#lightbox .images .closing-btn {
-  display: flex;
-  justify-content: end;
-  margin-block-end: 20px;
+body.dark-mode header nav {
+  border-block-end: 1px solid rgba(255, 255, 255, 0.2039215686);
 }
-#lightbox .images .closing-btn #close-lightbox {
-  background: transparent;
+body.dark-mode header nav .arabic:hover {
+  text-shadow: 0 0 50px white;
 }
-#lightbox .images .closing-btn #close-lightbox ion-icon {
-  font-size: 2rem;
-  color: hsl(26, 100%, 55%);
+body.dark-mode header nav a:hover {
+  color: rgba(255, 255, 255, 0.9333333333);
 }
-#lightbox .images .carousel {
-  flex: 1;
-  min-width: 400px;
-  height: 450px;
-  position: relative;
+body.dark-mode header nav button span {
+  color: #fff;
 }
-#lightbox .images .carousel .slide {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+body.dark-mode header nav button:hover .material-symbols-outlined {
+  text-shadow: 0 0 20px white;
 }
-#lightbox .images .carousel .slide[data-active] {
-  opacity: 1;
+body.dark-mode main .lined-heading::after {
+  background-color: #eeeeee;
 }
-#lightbox .images .carousel .slide button {
-  max-width: calc(100% - 40px);
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body.dark-mode main .hero button {
+  background-color: #a4b494;
+  color: #343434;
 }
-#lightbox .images .carousel .slide img {
-  max-width: 100%;
-  height: auto;
-  max-height: unset;
-  border-radius: 20px;
+body.dark-mode main .hero button:hover {
+  background-color: #bec9b2;
 }
-#lightbox .images .images-thumbnail {
-  max-width: calc(100% - 40px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  margin-block-start: 30px;
-  margin-inline-start: 20px;
+body.dark-mode main .hero h1 {
+  color: #a4b494;
 }
-#lightbox .images .images-thumbnail button {
-  background-color: transparent;
-  border-radius: 16px;
+body.dark-mode main .hero h1 span {
+  color: #fff;
 }
-#lightbox .images .images-thumbnail button img {
-  width: 100%;
-  min-width: 66px;
-  max-width: 90px;
-  height: auto;
-  border-radius: 15px;
+body.dark-mode main .hero h2 {
+  color: #519872;
 }
-#lightbox .images .images-thumbnail button:hover img, #lightbox .images .images-thumbnail button:focus img, #lightbox .images .images-thumbnail button[data-active=true] img {
-  border: 2px solid hsl(26, 100%, 55%);
-  opacity: 0.5;
+body.dark-mode .skills li {
+  background-color: #565656;
+  color: #fff;
 }
-#lightbox .images .navigator button {
-  position: absolute;
-  top: calc(50% - 20px);
-  background-color: white;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body.dark-mode .contact .input-control input, body.dark-mode .contact .input-control textarea {
+  background-color: #565656;
+  border-color: #565656;
+  color: #fff;
 }
-#lightbox .images .navigator button:hover ion-icon {
-  color: hsl(26, 100%, 55%);
+body.dark-mode .contact .input-control input:focus, body.dark-mode .contact .input-control textarea:focus {
+  background-color: #343434 !important;
 }
-#lightbox .images .navigator button ion-icon {
-  font-size: 1.25rem;
+body.dark-mode .contact button[type=submit] {
+  background-color: #a4b494;
+  color: #343434;
 }
-#lightbox .images .navigator .previous {
-  left: 10px;
+body.dark-mode .contact button[type=submit]:hover {
+  background-color: #bec9b2;
 }
-#lightbox .images .navigator .previous ion-icon {
-  margin-inline-end: 2px;
+body.dark-mode .contact button[type=submit] p {
+  color: #343434;
 }
-#lightbox .images .navigator .next {
-  right: 10px;
+body.dark-mode footer {
+  border-block-start: 1px solid rgba(255, 255, 255, 0.2039215686);
 }
-#lightbox .images .navigator .next ion-icon {
-  margin-inline-start: 2px;
+body.dark-mode footer svg:hover {
+  fill: rgba(255, 255, 255, 0.8);
 }
 
 header {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  padding: 20px;
-}
-header .space {
-  width: 15px;
-}
-header .container-logo {
-  display: flex;
-  align-items: center;
-}
-header .container-logo #open-menu ion-icon {
-  background-color: white;
-  font-size: 1.5rem;
-}
-header #mobile-nav {
-  position: absolute;
-  z-index: 3;
-  background-color: white;
-  min-height: 100%;
+  position: fixed;
   top: 0;
-  left: -260px;
-  width: 260px;
-  padding: 15px 25px;
-  transition: left 0.2s ease-in-out;
-}
-header #mobile-nav.show-mobile-nav {
-  left: 0 !important;
-}
-header #mobile-nav button {
-  background-color: white;
-  margin-block-end: 50px;
-}
-header #mobile-nav button ion-icon {
-  font-size: 1.5rem;
-}
-header #mobile-nav button:hover {
-  color: hsl(219, 9%, 45%);
-}
-header #mobile-nav ul {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-header #mobile-nav ul a {
-  font-weight: 700;
-  color: hsl(220, 13%, 13%);
-}
-header .desktop-nav {
-  display: none;
-}
-header .user {
-  display: flex;
-  align-items: center;
-  margin-inline-start: auto;
-  position: relative;
-}
-header .user button {
-  background-color: white;
-}
-header .user #cart {
-  position: relative;
-}
-header .user #cart span {
-  position: absolute;
-  top: -5px;
-  background-color: hsl(26, 100%, 55%);
-  color: hsl(25, 100%, 94%);
-  border-radius: 1rem;
-  width: 1.5rem;
-  height: 1rem;
-}
-header .user #cart-box {
-  position: absolute;
-  z-index: 3;
-  background-color: white;
-  border-radius: 10px;
-  width: 345px;
-  right: -5px;
-  top: 55px;
-  min-height: 250px;
-  max-height: 250px;
-  display: flex;
-  flex-direction: column;
-}
-header .user #cart-box > p {
-  color: hsl(220, 13%, 13%);
-  font-weight: 700;
-  border-block-end: 1px solid rgba(0, 0, 0, 0.301);
-  padding: 20px;
-}
-header .user #cart-box .cart-content {
-  padding: 20px;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-header .user #cart-box .cart-content > p {
-  font-weight: bold;
-  color: hsl(219, 9%, 45%);
-  align-self: center;
-}
-header .user #cart-box .cart-content #filled {
-  width: 100%;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-header .user #cart-box .cart-content #filled .cart-product {
-  width: 100%;
+  width: 100vw;
+  height: auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 100;
 }
-header .user #cart-box .cart-content #filled .cart-product img {
-  width: 48px;
-  height: auto;
-  border-radius: 5px;
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  border-block-end: rgba(52, 52, 52, 0.2039215686) 1px solid;
+  padding: 16px 24px;
 }
-header .user #cart-box .cart-content #filled .cart-product p {
-  color: hsl(219, 9%, 45%);
+header nav .arabic {
+  font-family: "Aref Ruqaa", serif;
+  font-size: 32px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
-header .user #cart-box .cart-content #filled .cart-product #product-total {
-  font-weight: bold;
-  color: hsl(220, 13%, 13%);
+header nav .arabic:hover {
+  color: #000;
+  text-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
 }
-header .user #cart-box .cart-content #filled .cart-product ion-icon {
-  font-size: 1.2rem;
-  color: hsl(219, 9%, 45%);
+header nav ul {
+  display: flex;
+  gap: 24px;
 }
-header .user #cart-box .cart-content #filled > button {
-  margin-block-start: auto;
-  background-color: hsl(26, 100%, 55%);
-  height: 56px;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: hsl(220, 13%, 13%);
+header nav ul a.active {
+  text-decoration: underline;
 }
-header .user #profile {
-  width: 24px !important;
-  height: auto !important;
+header nav ul a:hover {
+  color: #000;
+}
+header nav button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+  color: #343434;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  border: none;
+}
+header nav button:hover {
+  color: #000;
+}
+header nav button:hover .material-symbols-outlined {
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+header nav button .material-symbols-outlined {
+  font-size: 20px;
+  transition: all 0.2s ease-in-out;
 }
 
 main {
+  padding: 100px 24px 0px 24px;
+}
+main .lined-heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 24px;
+  margin-block: 40px 20px;
+}
+main .lined-heading::after {
+  content: "";
   flex: 1;
+  height: 1px;
+  background-color: #343434;
 }
-main .images .carousel {
+main .hero {
+  display: flex;
+  align-items: center;
+  margin: 70px 0px;
+  gap: 20px;
+}
+main .hero .text h1 {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #382933;
+}
+main .hero .text h2 {
+  font-size: 20px;
+  min-inline-size: 32ch;
+  color: #3b5249;
+}
+main .hero .text .thin {
+  font-weight: 200;
+  text-transform: none;
+}
+main .hero .text p {
+  margin-block-start: 10px;
+  max-inline-size: 45ch;
+}
+main .hero .text button {
+  background-color: #3b5249;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 10px;
+  margin-block-start: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+main .hero .text button:hover {
+  background-color: #507063;
+}
+main .illustration img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+main .skills ul {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-block-end: 7px;
+}
+main .skills ul li {
+  background-color: #eeeeee;
+  padding: 3px 7px;
+  border-radius: 3px;
+}
+main .about {
+  margin-block-end: 250px;
+}
+main .projects {
   position: relative;
-  height: 300px;
 }
-main .images .carousel .slide {
+main .projects .show-more {
   position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  right: 0;
+  top: 7px;
+  background-color: #fff;
+  padding-inline-start: 20px;
+  cursor: pointer;
+  font-style: italic;
+  color: rgba(52, 52, 52, 0.5333333333);
+  transition: color 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
 }
-main .images .carousel .slide[data-active] {
-  opacity: 1;
+main .projects .show-more:hover {
+  color: #343434;
 }
-main .images .carousel li > button {
-  width: 100%;
-  background-color: transparent;
+main .projects .show-more:hover .material-symbols-outlined {
+  transform: rotate(45deg) translateY(2px);
 }
-main .images .carousel li > button img {
-  width: 100%;
-  height: 300px;
+main .projects .show-more .material-symbols-outlined {
+  font-size: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+main .projects .projects-list {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 24px;
+  margin-block-start: 20px;
+  max-width: 100%;
+  height: auto;
+}
+main .projects .projects-list .project-item img {
+  max-height: 222px;
   object-fit: cover;
 }
-main .images .carousel .navigator button {
-  position: absolute;
-  top: calc(50% - 20px);
-  background-color: white;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+main .projects .projects-list .project-item:hover img {
+  transform: scale(1.05);
+}
+main .projects .projects-list .project-item:hover h3 {
+  text-decoration: underline;
+}
+main .projects .projects-list .project-item div {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 5px solid #eeeeee;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main .images .carousel .navigator button:hover ion-icon {
-  color: hsl(26, 100%, 55%);
+main .projects .projects-list .project-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s ease-in-out;
 }
-main .images .carousel .navigator button ion-icon {
-  font-size: 1.25rem;
+main .projects .projects-list .project-item h3 {
+  margin-block-start: 0.5rem;
 }
-main .images .carousel .navigator #previous {
-  left: 15px;
-}
-main .images .carousel .navigator #previous ion-icon {
-  margin-inline-end: 2px;
-}
-main .images .carousel .navigator #next {
-  right: 15px;
-}
-main .images .carousel .navigator #next ion-icon {
-  margin-inline-start: 2px;
-}
-main .images .images-thumbnail {
-  display: none;
-}
-main .text {
-  padding: 20px;
-}
-main .text > * {
-  margin-block-end: 15px;
-}
-main .text .brand {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: hsl(219, 9%, 45%);
-  margin-block-end: 10px;
-}
-main .text h2 {
-  font-size: 1.75rem;
-  line-height: 1.1;
-  color: hsl(220, 13%, 13%);
-}
-main .text .description {
-  font-size: 0.938rem;
-  color: hsl(219, 9%, 45%);
-}
-main .text .price {
-  display: flex;
-  align-items: center;
-}
-main .text .price .price-new {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: hsl(220, 13%, 13%);
-}
-main .text .price .promo {
-  background-color: hsl(220, 13%, 13%);
-  color: white;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 5px;
-  margin-inline-start: 10px;
-}
-main .text .price .price-old {
-  margin-inline-start: auto;
-  text-decoration: line-through;
-  font-weight: 700;
-  color: hsl(219, 9%, 45%);
-}
-main .text .product-add {
+main .contact {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1rem;
+  margin-block-end: 150px;
 }
-main .text .product-add .input-control {
-  position: relative;
+main .contact .contact-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-main .text .product-add .input-control input[type=number]::-webkit-outer-spin-button,
-main .text .product-add .input-control input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+main .contact h1 {
+  font-size: 1.75rem;
 }
-main .text .product-add .input-control input {
-  background-color: hsl(223, 64%, 98%);
+main .contact .name-email {
+  display: flex;
+  gap: 16px;
+}
+main .contact .input-control {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 56px;
-  outline: none;
-  border: none;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 700;
 }
-main .text .product-add .input-control button {
-  background-color: transparent;
-  position: absolute;
+main .contact .input-control input, main .contact .input-control textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: unset;
+  outline: unset;
+  background-color: #eeeeee;
+  border: 1px solid #eee;
+  font-family: "Baloo 2", sans-serif;
+  transition: all 0.2s ease-in-out;
+  border-radius: 7px;
+  resize: none;
+}
+main .contact .input-control input:focus, main .contact .input-control textarea:focus {
+  background-color: #fff;
+  border: 1px solid #eeeeee;
+}
+main .contact button[type=submit] {
+  outline: unset;
+  border: unset;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-family: "Baloo 2", sans-serif;
+  background-color: #3b5249;
+  color: #fff;
+  border-radius: 7px;
+  align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 5px;
-  width: 48px;
-  height: 48px;
+  gap: 7px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
-main .text .product-add .input-control button:hover ion-icon {
-  color: hsl(26, 100%, 55%);
+main .contact button[type=submit]:hover {
+  background-color: #519872;
 }
-main .text .product-add .input-control button ion-icon {
-  font-size: 1.2rem;
-  color: hsl(26, 100%, 55%);
-}
-main .text .product-add .input-control button ion-icon:hover {
-  color: #ff9a4d;
-}
-main .text .product-add .input-control .minus {
-  left: 5px;
-}
-main .text .product-add .input-control .plus {
-  right: 5px;
-}
-main .text .product-add #addBtn {
-  height: 56px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  border-radius: 10px;
-  background-color: hsl(26, 100%, 55%);
-  color: hsl(220, 13%, 13%);
+main .contact button[type=submit] p, main .contact button[type=submit] .material-symbols-outlined {
   font-size: 1rem;
-  font-weight: bold;
-  box-shadow: 0px 10px 40px -15px hsl(26, 100%, 55%);
-}
-main .text .product-add #addBtn:hover {
-  background-color: #ff9a4d;
 }
 
-@media screen and (min-width: 768px) {
-  body {
-    position: relative;
+footer {
+  margin-block-start: 100px;
+  padding: 16px 24px;
+  border-block-start: rgba(52, 52, 52, 0.2039215686) 1px solid;
+  display: flex;
+  justify-content: space-between;
+}
+footer .socials {
+  display: flex;
+  gap: 8px;
+}
+footer .socials li {
+  color: #343434;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .socials li a {
+  min-width: 28px;
+  min-height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .socials li a:hover {
+  color: #000;
+}
+footer .socials li a svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media screen and (max-width: 680px) {
+  .hero {
+    flex-direction: column;
   }
-  body #lightbox .images .carousel {
-    flex: 1;
-    min-width: 500px;
+  .hero .text h2 {
+    min-inline-size: unset !important;
   }
-  body #lightbox .images .carousel .slide button {
-    max-width: calc(100% - 40px);
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .hero .text p {
+    max-inline-size: unset !important;
   }
-  body #lightbox .images .carousel .slide img {
-    max-width: 100%;
-    height: auto;
-    max-height: unset;
-    border-radius: 20px;
-  }
-  body #lightbox .images .images-thumbnail {
-    max-width: calc(100% - 40px);
-    margin-inline-start: 20px;
-    justify-content: center;
-    align-items: center;
-  }
-  body #lightbox .images .navigator .previous {
-    left: 0px;
-  }
-  body #lightbox .images .navigator .next {
-    right: 0px;
-  }
-  header {
-    max-width: 1120px;
-    padding: 40px 20px;
-    border-block-end: 1px solid rgba(0, 0, 0, 0.2);
-  }
-  header .container-logo .space {
-    width: 0px;
-  }
-  header .container-logo #open-menu {
-    display: none;
-  }
-  header nav {
-    display: flex;
-    align-items: center;
-  }
-  header nav .desktop-nav {
-    display: flex;
-    gap: 30px;
-    margin-inline-start: 50px;
-  }
-  header nav .desktop-nav a {
-    color: hsl(219, 9%, 45%);
-  }
-  header nav .desktop-nav a:hover {
-    color: hsl(220, 13%, 13%);
-    font-weight: normal;
-  }
-  header .user .space {
-    width: 30px;
-  }
-  header .user #cart-box {
-    top: 60px;
-    left: -240px;
-    box-shadow: 0px 10px 15px 5px rgba(0, 0, 0, 0.2);
-  }
-  header .user #profile {
-    width: 36px !important;
-  }
-  main {
-    width: 100%;
-    max-width: 1060px;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    padding: 0px 20px;
-    margin: 80px 0px;
-  }
-  main section {
-    flex: 1;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-  }
-  main section .images .carousel {
-    flex: 1;
-    min-width: 400px;
-    height: 450px;
-    position: relative;
-  }
-  main section .images .carousel .slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  main section .images .carousel .slide[data-active] {
-    opacity: 1;
-  }
-  main section .images .carousel .slide img {
-    max-width: 450px;
-    height: auto;
-    max-height: unset;
-    border-radius: 20px;
-  }
-  main section .images .images-thumbnail {
-    display: flex;
-    gap: 30px;
-    margin-block-start: 30px;
-  }
-  main section .images .images-thumbnail button {
-    background-color: transparent;
-    border-radius: 16px;
-  }
-  main section .images .images-thumbnail button img {
-    width: 100%;
-    min-width: 66px;
-    max-width: 90px;
-    height: auto;
-    border-radius: 15px;
-  }
-  main section .images .images-thumbnail button:hover img, main section .images .images-thumbnail button:focus img, main section .images .images-thumbnail button[data-active=true] img {
-    border: 2px solid hsl(26, 100%, 55%);
-    opacity: 0.5;
-  }
-  main section .images .navigator {
+  .hero .illustration img {
     display: none !important;
   }
-  main section .text {
-    flex: 1;
-    min-width: 354px;
-    max-width: 450px;
-    padding: 0px;
-  }
-  main section .text h2 {
-    font-size: 3rem;
-    margin-block-end: 30px;
-  }
-  main section .text .price {
-    display: grid;
-    grid-template-rows: auto auto;
-    justify-content: flex-start;
-    gap: 5px;
-  }
-  main section .text .price .price-new {
-    grid-row: 1;
-    width: fit-content;
-  }
-  main section .text .price .promo {
-    grid-row: 1;
-    width: fit-content;
-  }
-  main section .text .price .price-old {
-    grid-row: 2;
-    margin-inline-end: 100%;
-  }
-  main section .text .product-add {
-    flex-direction: row;
-    margin-block-start: 30px;
-  }
-  main section .text .product-add input {
-    min-width: 150px;
-  }
-  main section .text .product-add #addBtn {
-    width: 100%;
-  }
 }
-@media screen and (min-width: 1300px) {
-  #cart-box {
-    left: -160px !important;
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: 20px !important;
+  }
+  h2 {
+    font-size: 18px !important;
+  }
+  .projects .projects-list {
+    grid-template-columns: auto !important;
   }
 }/*# sourceMappingURL=style.css.map */
