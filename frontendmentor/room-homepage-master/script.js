@@ -32,12 +32,29 @@ function updateCarousel() {
   heroTrackMobile.style.transform = `translateX(${offset}%)`;
   heroTrackDesktop.style.transform = `translateX(${offset}%)`;
   featuresTrack.style.transform = `translateX(${currentIndex * -33.3}%)`;
+
+  // Accessibility: Manage focus and aria-hidden for features items
+  const slides = featuresTrack.querySelectorAll('.features__item');
+
+  slides.forEach((slide, index) => {
+    if (index === currentIndex) {
+      slide.setAttribute('aria-hidden', 'false');
+      slide.querySelectorAll('a, button, input, [tabindex]').forEach(el => {
+        el.tabIndex = 0; // Focusable
+      });
+    } else {
+      slide.setAttribute('aria-hidden', 'true');
+      slide.querySelectorAll('a, button, input, [tabindex]').forEach(el => {
+        el.tabIndex = -1; // Not focusable
+      });
+    }
+  });
 }
 
 let autoSlide = setInterval(() => {
   currentIndex = currentIndex === maxIndex ? 0 : currentIndex + 1;
   updateCarousel();
-}, 3000);
+}, 5000);
 
 function stopAutoSlide() {
   clearInterval(autoSlide);
@@ -55,3 +72,5 @@ nextBtn.addEventListener('click', () => {
   currentIndex = currentIndex === maxIndex ? 0 : currentIndex + 1;
   updateCarousel();
 });
+
+updateCarousel();
