@@ -473,6 +473,8 @@ body {
 
     .footer {
         padding: 0px;
+        display: flex;
+        justify-content: center;
 
         &__container {
             display: grid;
