@@ -37,7 +37,7 @@ function updateCarousel() {
 let autoSlide = setInterval(() => {
   currentIndex = currentIndex === maxIndex ? 0 : currentIndex + 1;
   updateCarousel();
-}, 3000);
+}, 5000);
 
 function stopAutoSlide() {
   clearInterval(autoSlide);
