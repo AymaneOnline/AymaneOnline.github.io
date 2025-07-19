@@ -284,6 +284,10 @@ main .projects .projects-list {
   max-width: 100%;
   height: auto;
 }
+main .projects .projects-list .project-item img {
+  max-height: 222px;
+  object-fit: cover;
+}
 main .projects .projects-list .project-item:hover img {
   transform: scale(1.05);
 }

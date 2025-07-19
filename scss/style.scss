@@ -376,6 +376,11 @@ main {
 
       .project-item {
 
+        img {
+          max-height: 222px;
+          object-fit: cover;
+        }
+
         &:hover {
           img {
             transform: scale(1.05);
