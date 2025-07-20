@@ -382,6 +382,8 @@ body.--hiddenOverflow {
   }
   .footer {
     padding: 0px;
+    display: flex;
+    justify-content: center;
   }
   .footer__container {
     display: grid;
