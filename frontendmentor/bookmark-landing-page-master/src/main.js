@@ -169,14 +169,3 @@ emailForm.addEventListener('submit', (e) => {
         addClasses(emailAlert, ['hidden']);
     }
 });
-
-// const socials = document.querySelectorAll('.socials');
-
-// socials.forEach((i) => {
-//     i.addEventListener('mouseenter', () => {
-//         i.querySelector('path').setAttribute('fill', '#f87171');
-//     });
-//     i.addEventListener('mouseleave', () => {
-//         i.querySelector('path').setAttribute('fill', '#ffffff'); // or original color
-//     });
-// });

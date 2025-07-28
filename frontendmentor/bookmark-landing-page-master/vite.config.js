@@ -4,5 +4,5 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
-  base: '/frontendmentor/bookmark-landing-page-master/',
+  base: './',
 })
