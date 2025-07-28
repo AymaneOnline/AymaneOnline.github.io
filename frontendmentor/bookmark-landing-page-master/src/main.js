@@ -80,24 +80,34 @@ const featuresNavItems = featuresNav.querySelectorAll('li');
 const featuresContainer = document.getElementById("features-container");
 
 featuresNavItems.forEach((item, index) => {
-    item.addEventListener('click', () => {
-        addClasses(featuresNavItems[index], ["after:content-['']", 'after:absolute', 'after:bg-red-400', 
-        'after:w-[8rem]', 'after:h-1', 'after:bottom-0', 'after:left-1/2', 'after:-translate-x-1/2','md:text-blue-950']);
+    // Function to handle the common logic for both click and Enter keydown
+    const handleItemActivation = () => {
+        addClasses(featuresNavItems[index], ["after:content-['']", 'after:absolute', 'after:bg-red-400',
+        'after:w-[8rem]', 'after:h-1', 'after:bottom-0', 'after:left-1/2', 'after:-translate-x-1/2','sm:after:w-full', 'sm:text-blue-950']); // Added sm:after:w-full and sm:text-blue-950 based on your HTML
         removeClasses(featuresNavItems[index], ['text-gray-500']);
 
         // Remove classes from all other items
         featuresNavItems.forEach((otherItem) => {
             if (otherItem !== item) {
                 removeClasses(otherItem, ["after:content-['']",'after:absolute','after:bg-red-400','after:w-[8rem]',
-                'after:h-1','after:bottom-0','after:left-1/2','after:-translate-x-1/2', 'md:text-blue-950']);
+                'after:h-1','after:bottom-0','after:left-1/2','after:-translate-x-1/2', 'sm:after:w-full', 'sm:text-blue-950']); // Added sm:after:w-full and sm:text-blue-950
                 addClasses(otherItem, ['text-gray-500']);
             }
         });
-    });
 
-    item.addEventListener('click', () => {
-        const index = parseInt(item.dataset.index);
+        // Call setSlide
         setSlide(index);
+    };
+
+    // Listen for 'click' event (for mouse clicks)
+    item.addEventListener('click', handleItemActivation);
+
+    // Listen for 'keydown' event (for keyboard navigation - Enter key)
+    item.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent default behavior (e.g., scrolling if 'li' were a link)
+            handleItemActivation();
+        }
     });
 });
 
