@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const destinationTravel = document.getElementById('destination-travel'); 
     const separator = document.getElementById('separator');
 
-    fetch('/data.json')
+    fetch('data.json')
     .then(response => response.json())
     .then(data => {
         // Use the JSON data here

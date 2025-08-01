@@ -3,6 +3,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { resolve } from 'path'
 
 export default defineConfig({
+  base: '/frontendmentor/space-tourism-website-main-deploy/', // 👈 REQUIRED for GitHub Pages
   plugins: [
     tailwindcss(),
   ],
