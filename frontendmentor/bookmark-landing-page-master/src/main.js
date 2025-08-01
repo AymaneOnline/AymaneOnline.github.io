@@ -76,51 +76,66 @@ function toggleMenu() {
 }
 
 const featuresNav = document.getElementById("features-nav-list");
-const featuresNavItems = featuresNav.querySelectorAll('li');
-const featuresContainer = document.getElementById("features-container");
+const featuresNavItems = featuresNav.querySelectorAll("li");
+const featuresItems = document.querySelectorAll(".feature-tab");
 
 featuresNavItems.forEach((item, index) => {
     // Function to handle the common logic for both click and Enter keydown
     const handleItemActivation = () => {
-        addClasses(featuresNavItems[index], ["after:content-['']", 'after:absolute', 'after:bg-red-400',
-        'after:w-[8rem]', 'after:h-1', 'after:bottom-0', 'after:left-1/2', 'after:-translate-x-1/2','sm:after:w-full', 'sm:text-blue-950']); // Added sm:after:w-full and sm:text-blue-950 based on your HTML
-        removeClasses(featuresNavItems[index], ['text-gray-500']);
+        // Activate selected nav item
+        addClasses(featuresNavItems[index], [
+            "after:content-['']",
+            "after:absolute",
+            "after:bg-red-400",
+            "after:w-[8rem]",
+            "after:h-1",
+            "after:bottom-0",
+            "after:left-1/2",
+            "after:-translate-x-1/2",
+            "sm:after:w-full",
+            "sm:text-blue-950"
+        ]);
+        removeClasses(featuresNavItems[index], ["text-gray-500"]);
 
-        // Remove classes from all other items
-        featuresNavItems.forEach((otherItem) => {
+        // Deactivate other nav items
+        featuresNavItems.forEach((otherItem, otherIndex) => {
             if (otherItem !== item) {
-                removeClasses(otherItem, ["after:content-['']",'after:absolute','after:bg-red-400','after:w-[8rem]',
-                'after:h-1','after:bottom-0','after:left-1/2','after:-translate-x-1/2', 'sm:after:w-full', 'sm:text-blue-950']); // Added sm:after:w-full and sm:text-blue-950
-                addClasses(otherItem, ['text-gray-500']);
+                removeClasses(otherItem, [
+                    "after:content-['']",
+                    "after:absolute",
+                    "after:bg-red-400",
+                    "after:w-[8rem]",
+                    "after:h-1",
+                    "after:bottom-0",
+                    "after:left-1/2",
+                    "after:-translate-x-1/2",
+                    "sm:after:w-full",
+                    "sm:text-blue-950"
+                ]);
+                addClasses(otherItem, ["text-gray-500"]);
+            }
+
+            // Show only the matching feature item
+            if (index === otherIndex) {
+                featuresItems[otherIndex].classList.remove("hidden");
+            } else {
+                featuresItems[otherIndex].classList.add("hidden");
             }
         });
-
-        // Call setSlide
-        setSlide(index);
     };
 
-    // Listen for 'click' event (for mouse clicks)
-    item.addEventListener('click', handleItemActivation);
+    // Mouse click
+    item.addEventListener("click", handleItemActivation);
 
-    // Listen for 'keydown' event (for keyboard navigation - Enter key)
-    item.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-            event.preventDefault(); // Prevent default behavior (e.g., scrolling if 'li' were a link)
+    // Keyboard: Enter key
+    item.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
             handleItemActivation();
         }
     });
 });
 
-function setSlide(index) {
-    const transforms = [
-        'translate-x-[0vw]',
-        'translate-x-[calc(-100vw)]',
-        'translate-x-[calc(-200vw)]'
-    ];
-
-    transforms.forEach(t => featuresContainer.classList.remove(t));
-    featuresContainer.classList.add(transforms[index]);
-}
 
 const questions = document.querySelectorAll('.question');
 
@@ -177,5 +192,6 @@ emailForm.addEventListener('submit', (e) => {
         removeClasses(emailInput, ['border-2', 'border-red-400', 'rounded-t-md']);
         addClasses(emailHelp, ['hidden']);
         addClasses(emailAlert, ['hidden']);
+        emailInput.value = null;
     }
 });
