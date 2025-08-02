@@ -12,8 +12,8 @@
     rel="stylesheet"
   />
   <title>Frontend Mentor | Bookmark landing page</title>
-  <script type="module" crossorigin src="/frontendmentor/bookmark-landing-page-master-deploy/assets/index-CdHL1dHD.js"></script>
-  <link rel="stylesheet" crossorigin href="/frontendmentor/bookmark-landing-page-master-deploy/assets/index-BcWHHw8z.css">
+  <script type="module" crossorigin src="/frontendmentor/bookmark-landing-page-master-deploy/assets/index-x_kRmzZg.js"></script>
+  <link rel="stylesheet" crossorigin href="/frontendmentor/bookmark-landing-page-master-deploy/assets/index-CSpae13M.css">
 </head>
 <body class="font-[rubik] overflow-x-hidden flex flex-col justify-center items-center">
   <header class="md:flex md:flex-col md:items-center">
@@ -90,7 +90,7 @@
       </div>
 
       <div class="mt-12 flex flex-col items-center">
-        <nav>
+        <nav class="w-full">
           <ul id="features-nav-list" class="text-center sm:flex sm:justify-center sm:items-center">
             <li tabindex="0" data-index="0" class="p-4 border-t border-t-[rgba(0,0,0,0.2)] cursor-pointer relative after:content-[''] after:absolute after:bg-red-400 after:w-[8rem] after:h-1 after:bottom-0 after:left-1/2 after:-translate-x-1/2 sm:border-t-0 sm:border-b sm:border-b-[rgba(0,0,0,0.2)] sm:px-10 sm:after:w-full sm:text-blue-950">Simple Bookmarking</li>
             <li tabindex="0" data-index="1" class="p-4 border-t border-t-[rgba(0,0,0,0.2)] cursor-pointer relative sm:border-t-0  sm:border-b sm:border-b-[rgba(0,0,0,0.2)] sm:px-10 sm:after:w-full text-gray-500">Speedy Searching</li>
@@ -98,13 +98,20 @@
           </ul>
         </nav>
 
-        <div class="mt-20 relative w-fit before:content-[''] before:absolute before:top-[20%] before:right-[25%] before:w-[200%] before:h-[50%] before:bg-blue-600 before:rounded-br-[5rem] before:lg:rounded-br-[10rem] before:z-0 lg:before:h-[85%] lg:before:right-[70%]">
-            <div id="features-container" class="lg:mb-8 relative">
+        <div class="mt-12 md:24">
 
-              <div data-index="0" class="feature-tab px-6">
-                <div class="flex flex-col items-center justify-center lg:flex-row">
-                  <img src="/frontendmentor/bookmark-landing-page-master-deploy/images/illustration-features-tab-1.svg" alt="Features first illustration" class="z-10 max-w-[500px]">
-                  <div class="text-center mt-16 sm:max-w-[500px] sm:ps-20 lg:text-start lg:mt-0">
+            <div class="lg:flex lg:items-center lg:mb-16">
+
+              <div class="pb-8 mx-auto relative w-fit before:content-[''] before:absolute before:bottom-0 before:right-[30%] before:w-[200%] before:h-[80%] before:bg-blue-600 before:rounded-br-[5rem] before:lg:rounded-br-[10rem]">
+                <div class="relative w-[calc(100vw-3rem)] aspect-[373/258] max-w-[400px] lg:max-w-[500px] flex items-start justify-center">
+                  <img src="/frontendmentor/bookmark-landing-page-master-deploy/images/illustration-features-tab-1.svg" alt="Features first illustration" class="feature-image absolute w-full h-auto transition-opacity duration-300">
+                  <img src="/frontendmentor/bookmark-landing-page-master-deploy/images/illustration-features-tab-2.svg" alt="Features second illusatration" class="feature-image absolute w-[90%] h-auto transition-opacity opacity-0 duration-300">
+                  <img src="/frontendmentor/bookmark-landing-page-master-deploy/images/illustration-features-tab-3.svg" alt="Features third illusatration" class="feature-image absolute w-[90%] h-auto transition-opacity opacity-0 duration-300">
+                </div>
+              </div>
+                
+              <div class="relative w-[calc(100vw-3rem)] min-h-[200px] mt-8 lg:mt-0 max-w-[500px] flex items-start justify-center">
+                  <div class="feature-text transition-opacity duration-300 ease-in text-center max-w-[500px] lg:ps-20 lg:text-start lg:mt-0">
                     <h3 class="font-medium text-xl text-blue-950 sm:text-2xl mb-4">Bookmark in one click</h3>
                     <p class="text-gray-500">
                       Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how
@@ -112,13 +119,8 @@
                     </p>
                     <button class="hidden lg:block mt-4 p-3 bg-blue-600 font-medium rounded text-white shadow-md cursor-pointer  hover:white hover:text-blue-600 hover:outline-2 hover:outline-blue-600">More Info</button>
                   </div>
-                </div>
-              </div>
-                
-              <div data-index="1" class="feature-tab hidden px-6">
-                <div class="flex flex-col items-center justify-center lg:flex-row">
-                  <img src="/frontendmentor/bookmark-landing-page-master-deploy/images/illustration-features-tab-2.svg" alt="Features second illusatration" class=" z-10 max-w-[400px]">
-                  <div class="text-center mt-16 sm:max-w-[500px] sm:ps-20 lg:text-start lg:mt-0">
+
+                  <div class="feature-text absolute top-0 opacity-0 transition-opacity duration-300 ease-in text-center max-w-[500px] lg:ps-20 lg:text-start lg:mt-0">
                     <h3 class="font-medium text-xl mb-4 text-blue-950 sm:text-2xl">Intelligent search</h3>
                     <p class="text-gray-500">
                       Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of
@@ -126,13 +128,8 @@
                     </p>
                     <button class="hidden lg:block mt-4 p-3 bg-blue-600 font-medium rounded text-white shadow-md cursor-pointer hover:bg-white hover:text-blue-600 hover:outline-2 hover:outline-blue-600">More Info</button>
                   </div>
-                </div>
-              </div>
 
-              <div data-index="2" class="feature-tab hidden px-6">
-                <div class="flex flex-col items-center justify-center lg:flex-row">
-                  <img src="/frontendmentor/bookmark-landing-page-master-deploy/images/illustration-features-tab-3.svg" alt="Features third illusatration" class=" z-10 max-w-[400px]">
-                  <div class="text-center mt-16 sm:max-w-[500px] sm:ps-20 lg:text-start lg:mt-0">
+                  <div class="feature-text absolute top-0 opacity-0 transition-opacity duration-300 ease-in text-center max-w-[500px] lg:ps-20 lg:text-start lg:mt-0">
                     <h3 class="font-medium text-xl mb-4 text-blue-950 sm:text-2xl">Share your bookmarks</h3>
                     <p class="text-gray-500">
                       Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click
@@ -140,20 +137,20 @@
                     </p>
                     <button class="hidden lg:block mt-4 p-3 bg-blue-600 font-medium rounded text-white shadow-md cursor-pointer hover:bg-white hover:text-blue-600 hover:outline-2 hover:outline-blue-600">More Info</button>
                   </div>
-                </div>
               </div>
-
+              
             </div>
           </div>
 
         </div>
+
       </div>
     </section>
 
 
-    <section id="pricing" tabindex="0" class="px-6 mt-24 overflow-hidden">
+    <section id="pricing" tabindex="0" class="px-6 mt-12 overflow-hidden">
       <h2 class="font-medium text-2xl text-center mb-4 text-blue-950">Download the extension</h2>
-      <p class="text-center text-gray-500">
+      <p class="text-center text-gray-500 max-w-[500px] mx-auto">
         We've got more browsers in the pipeline. Please do let us know if you've got a favourite you'd like us to prioritize.
       </p>
       <div class="flex flex-col items-center md:flex-row md:gap-8 md:justify-center md:pb-8">

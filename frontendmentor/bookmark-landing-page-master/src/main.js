@@ -77,7 +77,8 @@ function toggleMenu() {
 
 const featuresNav = document.getElementById("features-nav-list");
 const featuresNavItems = featuresNav.querySelectorAll("li");
-const featuresItems = document.querySelectorAll(".feature-tab");
+const featuresImages = document.querySelectorAll(".feature-image");
+const featuresTexts = document.querySelectorAll(".feature-text");
 
 featuresNavItems.forEach((item, index) => {
     // Function to handle the common logic for both click and Enter keydown
@@ -114,14 +115,31 @@ featuresNavItems.forEach((item, index) => {
                 ]);
                 addClasses(otherItem, ["text-gray-500"]);
             }
+        });
 
-            // Show only the matching feature item
-            if (index === otherIndex) {
-                featuresItems[otherIndex].classList.remove("hidden");
-            } else {
-                featuresItems[otherIndex].classList.add("hidden");
+        // Deactivate all feature images and texts first
+        featuresImages.forEach((img, i) => {
+            if (i !== index) {
+                img.classList.remove('z-10', 'opacity-100');
+                img.classList.add('z-0', 'opacity-0');
             }
         });
+
+        featuresTexts.forEach((text, i) => {
+            if (i !== index) {
+                text.classList.remove('opacity-100');
+                text.classList.add('absolute');
+                text.classList.add('opacity-0');
+            }
+        });
+
+        // Activate selected feature image and text
+        featuresImages[index].classList.add('z-10', 'opacity-100');
+        featuresImages[index].classList.remove('opacity-0');
+
+        featuresTexts[index].classList.add('opacity-100');
+        featuresTexts[index].classList.remove('opacity-0');
+        featuresTexts[index].classList.remove('absolute');
     };
 
     // Mouse click
