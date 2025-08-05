@@ -118,6 +118,39 @@ body {
       }
     }
 
+    .projects {
+      .projects-list {
+        &.single-column {
+          .project-item {
+            &:hover {
+              background-color: #404040;
+            }
+            
+            .content {
+              .text-content {
+                h3 {
+                  color: #fff;
+                }
+                
+                p {
+                  color: #ccc;
+                }
+              }
+              
+              .skills {
+                ul {
+                  li {
+                    background-color: #565656;
+                    color: #fff;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
     .contact {
 
       .input-control {
@@ -638,13 +671,47 @@ footer {
   }
   h2 {
     font-size: 18px !important;
-  }
-
-  
+  } 
 
   .projects {
     .projects-list {
       grid-template-columns: auto !important;
+    }
+  }
+
+      .projects {
+    .projects-list {
+      &.single-column {
+        .project-item {
+          flex-direction: column;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+          gap: 0px !important;
+          
+          .img-container {
+            width: 100% !important;
+            height: auto !important;
+            max-height: 500px !important;
+            aspect-ratio: 280/180;
+
+            img {
+              width: 100% !important;
+              height: auto !important;
+              max-height: unset;
+              object-fit: contain !important;
+            }
+          }
+          
+          .content {
+            min-height: auto;
+            
+            .text-content {
+              text-align: left;
+            }
+          }
+        }
+      }
     }
   }
 }
