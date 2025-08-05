@@ -68,7 +68,7 @@ body.dark-mode main .hero button {
   color: #343434;
 }
 body.dark-mode main .hero button:hover {
-  background-color: #bec9b2;
+  background-color: rgb(189.5, 201.0164835165, 177.9835164835);
 }
 body.dark-mode main .hero h1 {
   color: #a4b494;
@@ -96,7 +96,7 @@ body.dark-mode .contact button[type=submit] {
   color: #343434;
 }
 body.dark-mode .contact button[type=submit]:hover {
-  background-color: #bec9b2;
+  background-color: rgb(189.5, 201.0164835165, 177.9835164835);
 }
 body.dark-mode .contact button[type=submit] p {
   color: #343434;
@@ -225,12 +225,15 @@ main .hero .text button {
   transition: all 0.2s ease-in-out;
 }
 main .hero .text button:hover {
-  background-color: #507063;
+  background-color: rgb(80.3404255319, 111.6595744681, 99.4042553191);
 }
 main .illustration img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+main .skills {
+  margin-top: 10px;
 }
 main .skills ul {
   display: flex;
@@ -284,6 +287,71 @@ main .projects .projects-list {
   max-width: 100%;
   height: auto;
 }
+main .projects .projects-list.single-column {
+  grid-template-columns: 1fr;
+  max-width: 900px;
+}
+main .projects .projects-list.single-column .project-item {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+main .projects .projects-list.single-column .project-item:hover .img-container img {
+  transform: scale(1.05);
+}
+main .projects .projects-list.single-column .project-item .img-container {
+  flex-shrink: 0;
+  width: 280px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 3px solid #eeeeee;
+}
+main .projects .projects-list.single-column .project-item .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+main .projects .projects-list.single-column .project-item .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+}
+main .projects .projects-list.single-column .project-item .content .text-content {
+  flex-grow: 1;
+}
+main .projects .projects-list.single-column .project-item .content .text-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+main .projects .projects-list.single-column .project-item .content .text-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+main .projects .projects-list.single-column .project-item .content .skills {
+  margin-top: auto;
+}
+main .projects .projects-list.single-column .project-item .content .skills ul {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-block-end: 7px;
+}
+main .projects .projects-list.single-column .project-item .content .skills ul li {
+  background-color: #eeeeee;
+  padding: 3px 7px;
+  border-radius: 3px;
+}
 main .projects .projects-list .project-item img {
   max-height: 222px;
   object-fit: cover;
@@ -294,7 +362,7 @@ main .projects .projects-list .project-item:hover img {
 main .projects .projects-list .project-item:hover h3 {
   text-decoration: underline;
 }
-main .projects .projects-list .project-item div {
+main .projects .projects-list .project-item .img-container {
   overflow: hidden;
   border-radius: 10px;
   border: 5px solid #eeeeee;

@@ -313,6 +313,7 @@ main {
   }
 
   .skills {
+    margin-top: 10px;
 
     ul {
       display: flex;
@@ -374,6 +375,90 @@ main {
       max-width: 100%;
       height: auto;
 
+      // Single column layout for projects page
+      &.single-column {
+        grid-template-columns: 1fr; // Single column
+        max-width: 900px; // Increased width for horizontal layout
+        
+        .project-item {
+          display: flex;
+          gap: 24px;
+          align-items: flex-start;
+          border-radius: 12px;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            
+            .img-container img {
+              transform: scale(1.05);
+            }
+          }
+          
+          // Image container on the left
+          .img-container {
+            flex-shrink: 0; // Prevent image from shrinking
+            width: 280px; // Fixed width for consistency
+            height: 180px; // Fixed height
+            overflow: hidden;
+            border-radius: 10px;
+            border: 3px solid #eeeeee;
+            
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: transform 0.3s ease;
+            }
+          }
+          
+          // Content on the right
+          .content {
+            flex: 1; // Take remaining space
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 180px; // Match image height
+            
+            .text-content {
+              flex-grow: 1;
+              
+              h3 {
+                font-size: 1.4rem;
+                margin-bottom: 12px;
+                color: #2c3e50;
+                transition: color 0.3s ease;
+              }
+              
+              p {
+                color: #666;
+                line-height: 1.6;
+                margin-bottom: 16px;
+              }
+            }
+            
+            // Technologies used section - using same styles as index.html
+            .skills {
+              margin-top: auto;
+              
+              ul {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 7px;
+                margin-block-end: 7px;
+                
+                li {
+                  background-color: #eeeeee;
+                  padding: 3px 7px;
+                  border-radius: 3px;
+                }
+              }
+            }
+          }
+        }
+      }
+
       .project-item {
 
         img {
@@ -391,7 +476,7 @@ main {
           }
         }
 
-        div {
+        .img-container {
           overflow: hidden;
           border-radius: 10px;
           border: 5px solid #eeeeee;
