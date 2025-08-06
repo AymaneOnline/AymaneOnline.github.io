@@ -17,3 +17,8 @@
         background-color: color.scale($color-dark-gray-blue, $lightness: 15%);
     }
 }
+
+.continue-btn:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
