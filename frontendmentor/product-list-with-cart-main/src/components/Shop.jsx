@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ProductList from './ProductList';
 import Cart from './Cart';
 
 export default function Shop({ products }) {
     const [cart, setCart] = useState([]);
     const [orderConfirmed, setOrderConfirmed] = useState(false);
+    const modalRef = useRef(null);
+    const previouslyFocusedElement = useRef(null);
 
     const removeFromCart = (name) => {
         setCart(prevCart => prevCart.filter(item => item.name !== name));
@@ -18,6 +20,9 @@ export default function Shop({ products }) {
     useEffect(() => {
         if (orderConfirmed) {
             document.body.style.overflow = 'hidden';
+            // save previously focused element and move focus to modal
+            previouslyFocusedElement.current = document.activeElement;
+            setTimeout(() => modalRef.current?.focus?.(), 0);
         } else {
             document.body.style.overflow = '';
         }
@@ -25,6 +30,35 @@ export default function Shop({ products }) {
         return () => {
             document.body.style.overflow = '';
         };
+    }, [orderConfirmed]);
+
+    // Close modal on Escape and trap focus inside modal when open
+    useEffect(() => {
+        function handleKeyDown(e) {
+            if (!orderConfirmed) return;
+            if (e.key === 'Escape') {
+                setOrderConfirmed(false);
+            } else if (e.key === 'Tab') {
+                // basic focus trap
+                const focusable = modalRef.current?.querySelectorAll?.('a, button, input, [tabindex]:not([tabindex="-1"])') || [];
+                if (focusable.length === 0) {
+                    e.preventDefault();
+                    return;
+                }
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
+        }
+
+        document.addEventListener('keydown', handleKeyDown);
+        return () => document.removeEventListener('keydown', handleKeyDown);
     }, [orderConfirmed]);
 
     return (
