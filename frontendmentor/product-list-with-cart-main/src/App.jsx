@@ -2,7 +2,7 @@ import Shop from './components/Shop';
 
 export default function App() {
     return (
-        <main className='bg-rose-50'>
+        <main className=''>
             <Shop products={PRODUCTS}/>
         </main>
     );  

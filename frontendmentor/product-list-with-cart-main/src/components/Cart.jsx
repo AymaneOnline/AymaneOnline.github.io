@@ -1,7 +1,7 @@
-export default function Cart({ cart, handleRemoveFromCart }) {
+export default function Cart({ cart, handleRemoveFromCart, confirmOrder }) {
 
     return (
-        <div className='lg:min-w-[375px] m-6 lg:mb-auto flex flex-col items-center px-6 py-8 bg-white rounded-lg shadow-sm'>
+        <div className='lg:min-w-[375px] m-6 lg:mb-auto flex flex-col items-center px-6 py-8 bg-white rounded-lg shadow-sm lg:my-16 lg:me-16'>
             <h2 className='mb-8 self-start font-bold text-2xl text-[hsl(14,86%,42%)]'>Your Cart ({cart.length})</h2>
             {cart.length === 0 ? (
             <>
@@ -36,7 +36,15 @@ export default function Cart({ cart, handleRemoveFromCart }) {
                     <img className="me-2" src="./assets/images/icon-carbon-neutral.svg" alt="Carbon-neutral icon" />
                     This is a <span className="font-semibold mx-1">carbon-neutral</span> delivery
                 </p>
-                <button className="w-full py-4 mt-8 text-xl font-medium text-white bg-[hsl(14,86%,42%)] rounded-full cursor-pointer hover:bg-[hsl(14,86%,25%)]">Confirm Order</button>
+                <button 
+                className="w-full py-4 mt-8 text-xl font-medium text-white bg-[hsl(14,86%,42%)] rounded-full cursor-pointer hover:bg-[hsl(14,86%,25%)] focus:bg-[hsl(14,86%,25%)]"
+                onClick={() => {
+                    confirmOrder();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }} 
+                >
+                    Confirm Order
+                </button>
             </>
             )}
         </div>
