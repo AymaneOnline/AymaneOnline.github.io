@@ -67,7 +67,7 @@ export default function ListItem({ product, cart, setCart }) {
 
             <div>
                 <span className='text-gray-500'>{product.category}</span>
-                <h3 className='font-semibold text-lg'>{product.name}</h3>
+                <h2 className='font-semibold text-lg'>{product.name}</h2>
                 <span className='font-semibold text-[hsl(14,86%,42%)]'>${product.price.toFixed(2)}</span>
             </div>
         </li>

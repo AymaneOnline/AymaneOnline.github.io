@@ -76,12 +76,18 @@ export default function Shop({ products }) {
 
         </div>
 
-        {cart.length !== 0 && orderConfirmed === true && (
-                <div className={`absolute max-h-[100svh] w-full z-10 p-6 bg-white bottom-0 overflow-y-auto
-                lg:max-w-lg lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:rounded-lg lg:shadow-lg 
-                lg:bottom-[unset] lg:max-h-[80svh]`}>
-                    <img className='mb-6' src="assets/images/icon-order-confirmed.svg" alt="Order confirmed icon" />
-                    <h1 className='font-bold text-4xl max-w-[9ch] mb-2 sm:max-w-none'>Order Confirmed</h1>
+    {cart.length !== 0 && orderConfirmed === true && (
+        <div
+        id="order-confirmation"
+        role="dialog"
+        aria-modal="true"
+        ref={modalRef}
+        tabIndex={-1}
+        className={`absolute max-h-[100svh] w-full z-10 p-6 bg-white bottom-0 overflow-y-auto
+        lg:max-w-lg lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:rounded-lg lg:shadow-lg 
+        lg:bottom-[unset] lg:max-h-[80svh]`}>
+            <img className='mb-6' src="assets/images/icon-order-confirmed.svg" alt="Order confirmed icon" />
+            <h2 className='font-bold text-4xl max-w-[9ch] mb-2 sm:max-w-none'>Order Confirmed</h2>
                     <p className='mb-6 text-gray-500'>We hope you enjoy your food!</p>
 
                     <div className='bg-rose-50 p-6 mb-8 rounded-lg'>
@@ -110,10 +116,13 @@ export default function Shop({ products }) {
 
 
                     <button 
+                    type="button"
                     className='bg-[hsl(14,86%,42%)] text-white w-full py-4 rounded-full hover:bg-[hsl(14,97%,36%)] transition-colors cursor-pointer'
                     onClick={() => {
                         setCart([]);
                         setOrderConfirmed(false);
+                        // restore focus to previously focused element
+                        setTimeout(() => previouslyFocusedElement.current?.focus?.(), 0);
                     }}>
                         Start New Order
                     </button>
