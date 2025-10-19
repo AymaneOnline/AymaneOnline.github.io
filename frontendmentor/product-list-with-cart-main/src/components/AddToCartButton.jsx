@@ -21,7 +21,7 @@ export default function AddToCartButton({ isAdded, quantity, onAdd, onRemove, on
                 ${isAdded ? 'hidden' : 'flex'}`}
             aria-pressed={isAdded}>
             
-                <img src="/assets/images/icon-add-to-cart.svg" alt="Add to Cart" />
+                <img src="./assets/images/icon-add-to-cart.svg" alt="Add to Cart" />
                 Add to Cart
             </button>
 
@@ -35,7 +35,7 @@ export default function AddToCartButton({ isAdded, quantity, onAdd, onRemove, on
                 }} 
                 className='min-w-[20px] min-h-[20px] flex justify-center items-center border-2 border-white rounded-full cursor-pointer'
                 aria-label="Decrease quantity">
-                    <img src="/assets/images/icon-decrement-quantity.svg" alt="Decrement quantity" />
+                    <img src="./assets/images/icon-decrement-quantity.svg" alt="Decrement quantity" />
                 </button>
 
                 {isAdded && (
@@ -53,7 +53,7 @@ export default function AddToCartButton({ isAdded, quantity, onAdd, onRemove, on
                 }} 
                 className='min-w-[20px] min-h-[20px] flex justify-center items-center border-2 border-white rounded-full cursor-pointer'
                 aria-label="Increase quantity">
-                    <img src="/assets/images/icon-increment-quantity.svg" alt="Increment quantity" />
+                    <img src="./assets/images/icon-increment-quantity.svg" alt="Increment quantity" />
                 </button>
                 
            </div>
