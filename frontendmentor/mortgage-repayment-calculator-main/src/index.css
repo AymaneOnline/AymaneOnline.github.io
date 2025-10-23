@@ -7,6 +7,7 @@
   src: url('./assets/fonts/static/PlusJakartaSans-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -14,11 +15,18 @@
   src: url('./assets/fonts/static/PlusJakartaSans-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @layer base {
   body {
     @apply font-jakarta bg-slate-100;
+  }
+  
+  /* Better focus indicators for accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(61, 70%, 52%);
+    outline-offset: 2px;
   }
 }
 
