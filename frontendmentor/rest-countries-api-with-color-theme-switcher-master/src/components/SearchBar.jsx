@@ -8,7 +8,7 @@ export default function SearchBar({ defaultValue = '' }) {
     <Form
       id="search-form"
       role="search"
-      className="px-10 py-4 mb-12 flex items-center gap-8 bg-white shadow-md rounded-md sm:max-w-md
+      className="px-10 py-4 mb-10 flex items-center gap-8 bg-white shadow-md rounded-md sm:max-w-md lg:min-w-lg
     dark:bg-[hsl(209,23%,22%)]">
       <FaSearch className="text-gray-400" size={20} />
       <input
